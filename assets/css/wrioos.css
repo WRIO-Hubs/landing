@@ -1,4 +1,5 @@
-h2.lead{font-size:1.68rem;font-weight:bold}
+.header-txt h1{margin-top:32px}
+h2.lead{font-size:1.5rem!important;font-weight:bold}
 .single-skill-bar{text-transform:none}
 .skill-bars.right .skill-bar-percent{left:auto;right:0}
 .roadmap-line{background:url('../images/roadmap_line.png') center repeat-x;background-position-y:86px}
