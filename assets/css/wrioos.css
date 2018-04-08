@@ -1,0 +1,21 @@
+h2.lead{font-size:1.68rem;font-weight:bold}
+.single-skill-bar{text-transform:none}
+.skill-bars.right .skill-bar-percent{left:auto;right:0}
+.roadmap-line{background:url('../images/roadmap_line.png') center repeat-x;background-position-y:86px}
+.team-circle .team-photo:before{opacity:.6;transform:translateX(-50%) scale(0.9)}
+.team-profile{max-width:600px}
+.team-profile .team-profile-info{padding:64px 0 0;text-align:center}
+.team-profile .team-profile-info .sub-title{font-size:1.2em}
+.team-profile .team-profile-info.text{font-size:1.2em;padding-top:20px!important}
+.alexey_anshakov{background:url('https://webrunes.com/team/img/alexey_anshakov.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.eric_egnet{background:url('https://webrunes.com/team/img/eric_egnet.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.michael_bilenko{background:url('https://webrunes.com/team/img/michael_bilenko.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.vladimir_spirin{background:url('https://webrunes.com/team/img/vladimir_spirin.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.umair_adeeb_shahid{background:url('https://webrunes.com/team/img/umair_adeeb_shahid.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.alwaleed_alshehail{background:url('https://webrunes.com/team/img/alwaleed_alshehail.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.jillian_zavitz{background:url('https://webrunes.com/team/img/jillian_zavitz.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.benjami_anderson{background:url('https://webrunes.com/team/img/benjami_anderson.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.roy_sasson{background:url('https://webrunes.com/team/img/roy_sasson.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.igor_anshakov{background:url('https://webrunes.com/team/img/igor_anshakov.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.vitaly_hatalski{background:url('https://webrunes.com/team/img/vitaly_hatalski.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.wulf_kaal{background:url('https://webrunes.com/team/img/wulf_kaal.jpg') center center no-repeat;min-width:200px;min-height:200px}

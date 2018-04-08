@@ -747,7 +747,7 @@ select:focus { outline: none; border: none; }
 .site-header .scroll-down { color: #fff; font-size: 10px; display: inline-block; text-transform: uppercase; position: absolute; bottom: 120px; right: 20px; transform: rotate(-90deg); z-index: 5; }
 .site-header .scroll-down:after { position: absolute; content: ""; height: 1px; width: 40px; background: #fff; left: -52px; top: 50%; animation: upDown2 2s infinite; }
 
-@keyframes upDown2 { 0%, 20%, 50%, 80%, 
+@keyframes upDown2 { 0%, 20%, 50%, 80%,
 	100% { transform: translateX(0); }
   40% { transform: translateX(4px); }
   60% { transform: translateX(6px); } }
