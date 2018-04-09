@@ -1,3 +1,7 @@
+.banner.banner-curb.banner-particle {
+    background: url(../images/header-bottom.png) bottom center no-repeat, url(../images/bg.jpg) no-repeat, #08091b;
+    background-size:100%,auto,auto,auto}
+.btn.btn-outline:after{background-color:#121536}
 .header-txt h1{margin-top:32px}
 h2.lead{font-size:1.5rem!important;font-weight:bold}
 p.lead{padding:0 0 30px}
