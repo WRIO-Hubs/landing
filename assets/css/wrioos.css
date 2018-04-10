@@ -1,8 +1,14 @@
 .banner.banner-curb.banner-particle {
-    background: url(../images/header-bottom.png) bottom center no-repeat, url(../images/bg.jpg) no-repeat, #08091b;
-    background-size:100%,auto,auto,auto}
+    background:#08091b url(../images/header-bottom.png) bottom center no-repeat;background-size:100%,auto,auto,auto}
 .btn.btn-outline:after{background-color:#121536}
 .btn,.btn:before,.navbar .navbar-nav > li > a.nav-link.btn:before,.navbar .navbar-nav > li > a.nav-link.btn:after{border-radius:5px}
+.navbar .navbar-nav > li > a.nav-link.active{color:#a862ff}
+  .navbar .navbar-nav > li:hover > a.nav-link.active {color:#a862ff!important} /* fix default theme */
+.navbar .navbar-nav > li > a:hover.nav-link{color:#c08dff}
+.navbar .navbar-nav > li:hover a{color:#fff}
+h6 span{color:#97a5bf;font-weight:normal}
+.distribution{margin:50px 0;text-align:center}
+.event-info-token .event-single-info{padding-bottom:10px}
 .btn,.btn:before{background-image:none;background-color:#7a0fff}
 .play-btn .play{background-image:none;background-color:#3561eb}
   .btn,.btn:hover,.play-btn .play:hover{background-color:#3561eb}
