@@ -4,6 +4,7 @@
 .btn,.btn:before,.navbar .navbar-nav > li > a.nav-link.btn:before,.navbar .navbar-nav > li > a.nav-link.btn:after{border-radius:5px}
 .navbar .navbar-nav > li > a.nav-link.active{color:#a862ff}
   .navbar .navbar-nav > li:hover > a.nav-link.active {color:#a862ff!important} /* fix default theme */
+  .bg-team-exp.mfp-bg{background-image:none}
 .navbar .navbar-nav > li > a:hover.nav-link{color:#c08dff}
 .navbar .navbar-nav > li:hover a{color:#fff}
 h6 span{color:#97a5bf;font-weight:normal}
@@ -27,11 +28,10 @@ h5.blog-title{font-size:1.25em;text-transform:uppercase}
 .roadmap-line{background:url('../images/roadmap_line.png') center repeat-x;background-position-y:86px}
 .team-circle .team-photo:before{opacity:.6;transform:translateX(-50%) scale(0.9)}
 .team-profile{max-width:600px}
-.team-profile .team-profile-info{padding:64px 0 0;text-align:center}
+.team-profile .team-profile-info{padding:40px 0 0;text-align:center}
 .team-profile .team-profile-info .sub-title{font-size:1.2em}
 .team-profile .team-profile-info.text{font-size:1.2em;padding-top:20px!important}
 .alexey_anshakov{background:url('https://webrunes.com/team/img/alexey_anshakov.jpg') center center no-repeat;min-width:200px;min-height:200px}
-.eric_egnet{background:url('https://webrunes.com/team/img/eric_egnet.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .michael_bilenko{background:url('https://webrunes.com/team/img/michael_bilenko.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .vladimir_spirin{background:url('https://webrunes.com/team/img/vladimir_spirin.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .umair_adeeb_shahid{background:url('https://webrunes.com/team/img/umair_adeeb_shahid.jpg') center center no-repeat;min-width:200px;min-height:200px}
@@ -39,6 +39,9 @@ h5.blog-title{font-size:1.25em;text-transform:uppercase}
 .jillian_zavitz{background:url('https://webrunes.com/team/img/jillian_zavitz.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .benjami_anderson{background:url('https://webrunes.com/team/img/benjami_anderson.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .roy_sasson{background:url('https://webrunes.com/team/img/roy_sasson.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.mikhail_kruchkov{background:url('https://webrunes.com/team/img/mikhail_kruchkov.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .igor_anshakov{background:url('https://webrunes.com/team/img/igor_anshakov.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .vitaly_hatalski{background:url('https://webrunes.com/team/img/vitaly_hatalski.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .wulf_kaal{background:url('https://webrunes.com/team/img/wulf_kaal.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.tab-custom .tab-content p a{padding:0}
+.accordion .card .card-header a{padding:15px 45px 15px 30px}
