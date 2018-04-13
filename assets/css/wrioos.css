@@ -45,3 +45,9 @@ h5.blog-title{font-size:1.25em;text-transform:uppercase}
 .wulf_kaal{background:url('https://webrunes.com/team/img/wulf_kaal.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .tab-custom .tab-content p a{padding:0}
 .accordion .card .card-header a{padding:15px 45px 15px 30px}
+
+@media (max-width: 768px) {
+  #crowdsale .text-right{text-align:left!important}
+  #crowdsale .text-left{text-align:right!important}
+  .mobile{text-align:center}
+}
