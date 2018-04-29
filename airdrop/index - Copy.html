@@ -40,8 +40,6 @@
 <br><br><br>
 		<!-- Banner/Slider -->
 		<div id="header" class="col-md-8 offset-md-2 col-sm-12 offset-sm-0 align-items-center max-width">
-			<form id="gform" method="POST" data-email="info@webrunes.com"
-			 action="https://script.google.com/macros/s/AKfycbyFhObK5RNnCt71FQc9AXp3bxIHqYwzU1PdEmHLk7qk6mxR7V-x/exec">
 			<div class="container">
 					<div class="row col-lg-10 offset-lg-1 col-md-12 offset-md-0 align-items-center text-center" data-animate="fadeInUp" data-delay=".3">
 						<div class="myRef alert alert-primary" data-animate="fadeInUp" data-delay="1" id="ref0">You've been invited by one of our numerous ambassadors. Enjoy your additional affiliate reward!</div>
@@ -50,17 +48,20 @@
 								<h3 class="name">Total Airdrop Campaign token allocation</h3>
 								<br>
 								<h4 class="name">5,000,000 WGD</h4>
-								<h5>+</h5>
-								<h6>2,500,000 WGD <a href="https://wr.io/supporter_round" target="_blank">Supporter Round</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></small></h6>
 								<span class="sub-title">
-									<small>$300,000 equivalent*</small></span>
-									<p><small>* <i>calculated for the initial WGD price; more details in the <a href="https://wr.io/WhitePaper.pdf" target="_blank">White Paper</a></i>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></small></p>
+									<small>$200,000 equivalent*</small></span>
+									<p><small>* <i>calculated for the initial WGD price; more details in the <a href="https://goo.gl/rVcPCV" target="_blank">White Paper</a></i>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></small></p>
 							<div class="text-left">
 							<br>
 							<h5 class="name">Registration</h5>
 							<p>Join our thousands of participants and get your own "Ambassador" account registered on it to track your growing network and get up to <b>250 WGD <i>($10 equivalent)</i></b> by completing the tasks below and extra reward per invited friend: both of you will receive +50 WGD.
-								<input type="email" name="Email" placeholder="Your email address" required="true"></p>
+							<form id="leaddyno" action="https://app.leaddyno.com/provision" method="post">
+								<input type="hidden" name="key" value="a3d469d2cd144e9a1de5684aaa9adf7fefd9469d"/>
+								<input type="email" name="email" placeholder="Your email address" required="true">
+							</form></p>
 							<br>
+							<form id="gform" method="POST" data-email="info@webrunes.com"
+							 action="https://script.google.com/macros/s/AKfycbyFhObK5RNnCt71FQc9AXp3bxIHqYwzU1PdEmHLk7qk6mxR7V-x/exec">
 							<h5 class="name">Rules</h5>
 							<p><b>1. Reward 100 WGD<span class="myRef" id="ref1"> + Extra 50 WGD as a referal</span></b>
 							<br>Join our <a href="https://t.me/webRunesGroup" target="_blank">Telegram</a> <sup><i class="fa fa-window-maximize"></i></sup> to stay on top of the latest announcements.
@@ -71,12 +72,12 @@
 							<input type="text" name="Youtube" placeholder="Your Youtube account name">
 							Comments are highly appriciated and may be additionaly rewarded.</p>
 							<p><b>3. Reward 50 WGD</b>
-							<br>Follow our <a href="https://twitter.com/webRunes" target="_blank">Twitter page</a> <sup><i class="fa fa-window-maximize"></i></sup>, like and retweet the <a href="https://twitter.com/webRunes/status/990502600586997761" target="_blank">Affiliates tweet</a> <sup><i class="fa fa-window-maximize"></i></sup>. You need to have at least 200 followers.
+							<br>Follow our <a href="https://twitter.com/webRunes" target="_blank">Twitter page</a> <sup><i class="fa fa-window-maximize"></i></sup>, like and retweet the <a href="https://twitter.com/webRunes/status/964115617627475969" target="_blank">Airdrop tweet</a> <sup><i class="fa fa-window-maximize"></i></sup>. You need to have at least 200 followers.
 							<input type="text" name="Twitter" placeholder="Your Twitter account URL">
 							Comments are highly appriciated and may be additionaly rewarded.
 							</p>
 							<p><b>4. Reward 50 WGD</b>
-							<br>Like and follow our <a href="https://www.facebook.com/webRunes" target="_blank">Facebook page</a> <sup><i class="fa fa-window-maximize"></i></sup>, like and repost the <a href="http://www.facebook.com/webRunes/posts/1879110208787286" target="_blank">Affiliates post</a> <sup><i class="fa fa-window-maximize"></i></sup>. You need to have at least 200 friends.
+							<br>Like and follow our <a href="https://www.facebook.com/webRunes" target="_blank">Facebook page</a> <sup><i class="fa fa-window-maximize"></i></sup>, like and repost the <a href="https://facebook.com/webRunes/posts/1801072313257743" target="_blank">Airdrop post</a> <sup><i class="fa fa-window-maximize"></i></sup>. You need to have at least 200 friends.
 							<br>
 							<input type="text" name="Facebook" placeholder="Your Facebook account URL">
 							Comments are highly appriciated and may be additionaly rewarded.</p>
@@ -85,7 +86,7 @@
 							<h5 class="name">ETH address for Airdrop WGD tokens</h5>
 							<p>Do not use an exchange address! Otherwise you will lose your WGD.
 							<br>
-							<input type="text" name="ETH Address" placeholder="Your ETH address" required="true">
+							<input type="text" name="address" placeholder="Your ETH address" required="true">
 							MIN payment 200 WGD. Earn more by inviting friends and <a href="../supporter_round/" target="_blank">Special Round</a> <sup><i class="fa fa-window-maximize"></i></sup> participation.
 							<br>We will send WGD to your wallet within 21 days after Crowdsale. Thank you!
 							</p>
@@ -94,8 +95,7 @@
 							<br>
 							</form>
 							<div class="text-center">
-								<input class="btn" type="submit" value="Submit">
-								<!--<input class="btn" value="Submit" onclick="submitForms()"/>-->
+								<input class="btn" value="Submit" onclick="submitForms()"/>
 							</div>
 							<br><br>
 							<p class="text-center">Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
@@ -107,9 +107,6 @@
 		</div><!-- .container -->
 	</div>
 	<!-- Start Section -->
-
-	<script data-cfasync="false" type="text/javascript"
-	src="../assets/js/form-submission-handler.js"></script>
 
 	<!-- Preloader !remove please if you do not want -->
 	<div id="preloader">
@@ -142,9 +139,9 @@
 	  LeadDyno.recordVisit();
 		LeadDyno.autoWatch();
 
-		//submitForms = function(){
-	  //  document.getElementById("leaddyno").submit();
-	  //  document.getElementById("gform").submit();
+		submitForms = function(){
+	    document.getElementById("leaddyno").submit();
+	    document.getElementById("gform").submit();
 		}
 	</script>
 </body>
