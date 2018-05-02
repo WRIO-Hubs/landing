@@ -41,7 +41,7 @@
 		<!-- Banner/Slider -->
 		<div id="header" class="col-md-8 offset-md-2 col-sm-12 offset-sm-0 align-items-center max-width">
 			<form id="gform" method="POST" data-email="info@webrunes.com"
-			 action="https://script.google.com/macros/s/AKfycbyFhObK5RNnCt71FQc9AXp3bxIHqYwzU1PdEmHLk7qk6mxR7V-x/exec">
+			 action="https://script.google.com/macros/s/AKfycbyFhObK5RNnCt71FQc9AXp3bxIHqYwzU1PdEmHLk7qk6mxR7V-x/exec" onsubmit="return checkForm(this);">
 			<div class="container">
 					<div class="row col-lg-10 offset-lg-1 col-md-12 offset-md-0 align-items-center text-center" data-animate="fadeInUp" data-delay=".3">
 						<div class="myRef alert alert-primary" data-animate="fadeInUp" data-delay="1" id="ref0">You've been invited by one of our numerous ambassadors. Enjoy your additional affiliate reward!</div>
@@ -94,7 +94,7 @@
 							<br>
 							</form>
 							<div class="text-center">
-								<input class="btn" type="submit" value="Submit">
+								<input class="btn" type="submit" name="SubmitButton" value="Submit">
 								<!--<input class="btn" value="Submit" onclick="submitForms()"/>-->
 							</div>
 							<br><br>
@@ -110,6 +110,15 @@
 
 	<script data-cfasync="false" type="text/javascript"
 	src="../assets/js/form-submission-handler.js"></script>
+
+	<script type="text/javascript">
+	function checkForm(form) // Submit button clicked
+	  {
+	    gform.SubmitButton.disabled = true;
+	    gform.SubmitButton.value = "Please wait...";
+	    return true;
+	  }
+	</script>
 
 	<!-- Preloader !remove please if you do not want -->
 	<div id="preloader">
@@ -145,7 +154,16 @@
 		//submitForms = function(){
 	  //  document.getElementById("leaddyno").submit();
 	  //  document.getElementById("gform").submit();
-		}
 	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99131563-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-99131563-1');
+</script>
 </body>
 </html>

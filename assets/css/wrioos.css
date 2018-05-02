@@ -35,8 +35,9 @@ h5.blog-title{font-size:1.25em;text-transform:uppercase}
 .single-chart .sub-heading{padding-bottom:40px}
 .why .blog-texts{padding:20px 0 40px}
 .blog-texts p{color:#a2b4d2}
-.text input[type=text],.text input[type=email]{background-color:#f4f4ff;border:1px solid #ced4da;border-radius:.25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;margin:12px 0;padding:4px 12px;width:100%}
-.text input[type=text]:focus,.text input[type=email]:focus{color:#495057;background-color:#fff;border-color:#80bdff;outline:0;box-shadow:0 0 0 0.2rem rgba(0,123,255,.25)}
+.text input[type=text],.text input[type=email],textarea{background-color:#f4f4ff;border:1px solid #ced4da;border-radius:.25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;margin:12px 0;padding:4px 12px;width:100%}
+.text input[type=text]:focus,.text input[type=email]:focus,textarea:focus{color:#495057;background-color:#fff;border-color:#80bdff;outline:0;box-shadow:0 0 0 0.2rem rgba(0,123,255,.25)}
+textarea{width:100%}
 .team-circle .team-title{font-size:1em}
 .single-skill-bar{text-transform:none}
 .skill-bars.right .skill-bar-percent{left:auto;right:0}
