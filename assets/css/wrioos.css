@@ -2,6 +2,8 @@
 .max-width{max-width:800px;margin:40px auto 0}
 p span{color:#c08dff}
 .grey{color:#eee;display:block}
+.main_bg{background:url(../../images/1.png) bottom right no-repeat}
+.countdown-box{background:rgb(0,0,0,.85);margin-top:60px}
 /*
 .position{}
   .position a{display:block;position:relative;z-index:1}
@@ -67,7 +69,11 @@ textarea{width:100%}
 .accordion .card .card-header a{padding:15px 45px 15px 30px}
 .ico-listing{margin-top:50px}
   .ico-listing img{height:40px}
+.bottom_links{display:-webkit-inline-box;margin-top:48px}
 input[type=radio]{margin-right:4px;position:relative;top:2px}
+.disc li,.alpha li{list-style-position:inside!important;padding:8px 0}
+  .disc li{list-style:disc}
+  .alpha li{list-style:lower-alpha}
 
 @media (max-width: 768px) {
   #crowdsale .text-right{text-align:left!important}
