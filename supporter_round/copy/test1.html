@@ -20,9 +20,9 @@
 	html,body{overflow:inherit!important}
 	#logout{display:none}
 	#dashboard{display:none}
-	#kyc_completed{display:none}
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
-	#tokeswidth,#tokeswidth2{transition:all 0.5s ease-out;width:100%}
+	#eth_address{max-width:300px}
+	#tokeswidth{transition:all 0.5s ease-out;width:100%}
 	</style>
 </head>
 
@@ -50,11 +50,11 @@
 
 <br><br><br>
 		<!-- Banner/Slider -->
-		<div id="header" class="col-sm-12">
+		<div id="header" class="col-sm-12 align-items-center">
 			<form id="gform" method="POST" data-email="info@webrunes.com"
 			   action="https://script.google.com/macros/s/AKfycbyZBkpxDstfnhec6qPW3uAA0E4aa6elbtCC01ai/exec" onsubmit="return checkForm(this);">
 		    <!-- change the form action to your script url -->
-			<div class="container align-items-center">
+			<div class="container">
 					<div class="row col-sm-12" data-animate="fadeInUp" data-delay=".3">
 						<div class="myRef alert alert-primary" data-animate="fadeInUp" data-delay="1" id="ref0">You've been invited by one of our numerous ambassadors. Enjoy your Extra +1% bonus!</div>
 						<div class="col-sm-12 text no-pd">
@@ -149,11 +149,12 @@
 							<br>
 
 							<div class="col-sm-12 text-center">
-								<h5 class="name">Your ETH address</h5>
-								<input type="text" name="ETH" id="eth_address" placeholder="Your ETH address" required="true" disabled>
+								<h5 class="name">Login with Metamask</h5>
+								<p><input type="text" name="ETH" id="eth_address" placeholder="Your ETH address" required="true"></p>
 								<div id="error">Please enter a valid ETH address.</div>
 								<div class="col-sm-12 text text-center">
-										<div id="login-metamask"></div>
+										<input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
+										<a href="#" class="btn" onClick="check();">Submit</a>
 								</div>
 							</div>
 							</div><!-- .row -->
@@ -165,69 +166,14 @@
 			</div>
 			</div><!-- .row -->
 		</div><!-- .container -->
+	</form>
 
 	<div id="dashboard" class="dashboard">
-		<div class="container">
-			<div class="row">
-				<br><br><br><br>
-				<div class="col-sm-12 text text-center">
-					 <h4>Total tokens 2,500,000 WGD</h4>
-					 <div class="progress progress-line-info big">
-						<div id="tokeswidth2" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-						<b><span class="tokens"></span> WGD left</b>
-						</div>
-					</div>
-				</div>
-				<br><br>
-				<div class="col-md-8 offset-md-2 col-sm-12 text steps">
-					 <h4>Step 1. Logged as</h4>
-	 				 <span id="logged_as"></span>
-				</div>
-				<div class="col-md-8 offset-md-2 col-sm-12 text steps">
-					 <h4>Step 2. How much WGD would you like to buy?</h4>
-        <select id="select_amount" style="display: none;">
-            <option value="1" required>25,000 WGD for 1 ETH &middot; MIN</option>
-            <option value="2">50,000 WGD for 2 ETH</option>
-            <option value="3">75,000 WGD for 3 ETH</option>
-            <option value="4">100,000 WGD for 4 ETH</option>
-            <option value="5">125,000 WGD for 5 ETH</option>
-            <option value="6">150,000 WGD for 6 ETH</option>
-            <option value="7">175,000 WGD for 7 ETH</option>
-            <option value="8">200,000 WGD for 8 ETH</option>
-            <option value="9">225,000 WGD for 9 ETH</option>
-            <option value="10">250,000 WGD for 10 ETH &middot; MAX</option>
-            <option value="0" disabled>Want more? Contact us at info@webrunes.com for the manual processing</option>
-        </select>
-				<br><br>
-				<p><b>IMPORTANT:</b> The more WGD you collect, the more tokens you'll be able to obtain during the following rounds of Airdrop held on pro rata basis. More details in the <a href="https://wr.io/WhitePaper.pdf" target="_blank">White Paper</a></i>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></p>
-				<p><label for="resident"><input type="checkbox" name="resident" value="resident" id="resident" required="true">&nbsp;I hereby confirm that I am not a resident nor a citizen of the United States of America or other country, whose legislation does not allow to buy or operate WGD tokens</label></p>
-				<p><label for="resident"><input type="checkbox" name="resident" value="resident" id="resident" required="true">&nbsp;I accept the <a href="https://wr.io/TokenPurchaseAgreement.pdf" target="_blank">Token Sale Agreement</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup> and understand, что получу токены 31 July с началом Token Sale</label></p>
-		 </div>
-		 <div class="col-md-8 offset-md-2 col-sm-12 text steps">
-				<h4>Step 3. KYC process</h4>
-				<div id="kyc">
-					<div id="idm-container"></div>
-					<input id="kyc_btn" class="btn" type="submit" name="SubmitButton" value="Submit">
-				<div>
-				<div id="kyc_completed">
-					Completed
-				<div>
-			</div>
- 		 <div class="col-md-8 offset-md-2 col-sm-12 text steps">
-				<h4>Step 4. Payment</h4>
-        <div id="pay-button"></div>
-			</div>
- 		 <div class="col-md-8 offset-md-2 col-sm-12 text steps">
-				<h4>Completed successfully!</h4>
-			</div>
-		</div>
-		</div>
+		Dashboard.
+	</div>
+
 	</div>
 	<!-- Start Section -->
-
-			<input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
-	</form>
-	</div>
 
 	<script data-cfasync="false" type="text/javascript"
 	src="../assets/js/sr-submission-handler.js"></script>
@@ -253,104 +199,43 @@
 	<!-- JavaScript (include all script here) -->
 	<script src="https://wr.io/assets/js/jquery.bundle.js"></script>
 	<script src="https://wr.io/assets/js/script.js"></script>
-    <script src="https://wr.io/assets/js/wrio.metamask.plugin.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
 
 		<div class="results"></div>
 		<script>
-		var tokensleft;
-		var percent;
 		document.addEventListener("DOMContentLoaded", function() {
 			$.getJSON("https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/od6/public/values?alt=json", function(data) {
-				tokensleft = data.feed.entry[0]['gsx$total']['$t'];
+				var tokensleft = data.feed.entry[0]['gsx$total']['$t'];
 				$('.tokens').prepend('<span>'+tokensleft+'</span>');
 				tokensleft = tokensleft.replace(/\,/g,'');
-				percent = Number(tokensleft)/2500000*100;
+				var percent = Number(tokensleft)/2500000*100;
 				document.getElementById('tokeswidth').style.width = percent + "%";
 			});
 		});
 
-		var idmm = 'login-metamask';
-
-		installed(idmm, () =>
-			connected(idmm, () =>
-				main_net_selected(idmm, () =>
-					metamask_login_done(idmm, () => {
-						document.getElementById('eth_address').style.display = "block";
-						document.getElementById("logged_as").innerHTML = "&nbsp;<b>"+web3.eth.defaultAccount+"</b>";
-						document.getElementById('eth_address').value = web3.eth.defaultAccount || new Web3(window.web3.currentProvider).eth.defaultAccount;
-						document.getElementById(idmm).innerHTML = '<a href="#" class="btn" onClick="check();">Login with Metamask</a>';
-					})
-				)
-			)
-		);
-
 		function dashboard(){
-			document.getElementById('tokeswidth2').style.width = percent + "%";
 			document.getElementById("gform").style.display = "none";
 			document.getElementById("affiliates").style.display = "none";
 			document.getElementById("wrio").style.display = "none";
 			document.getElementById("logout").style.display = "block";
 			document.getElementById("dashboard").style.display = "block";
-
-
-
-			var account = web3.eth.defaultAccount || new Web3(window.web3.currentProvider).eth.defaultAccount;
-        $.ajax('https://storage.wrioos.com/supporter_round/token?account=' + account).always(() => {
-            fetch('https://wr.io/supporter_round/kyc_tokens/' + account)
-                .then(_ => _.text())
-                .then(token => {
-                    window._idm = {
-                        container_id: "idm-container",
-                        plugin_token: token,
-                        required_id_country_list:['US::^(?!666|000|9\\d{2})\\d{3}[- ]{0,1}(?!00)\\d{2}[- ]{0,1}(?!0{4})\\d{4}$'],
-                        country_blacklist: ['US'],
-                        on_response: function(jwtresponse) {
-                            const array = jwtresponse.split('.');
-                            const header = JSON.parse(atob(array[0]));
-                            const response = JSON.parse(atob(array[1]));
-                            const signature = array[2];
-                            // here save jwtresponse to google docs
-                            if (response.kyc_result === 'ACCEPT') {
-                                var sel = document.getElementById('select_amount');
-                                var address = '0x3b6Df61328E519B243437b1C65146A5943e83231';
-                                sel.style.display = '';
-                                wrio_metamask_plugin('pay-button', address, sel.value);
-                                sel.onchange = () => wrio_metamask_plugin('my_container', address, sel.value);
-                            }
-                        }
-                    };
-                    (function(){var a=document.createElement('script');var m=document.getElementsByTagName('script')[0];a.src='https://cd1st.identitymind.com/idm.min.js';m.parentNode.insertBefore(a,m)})()
-                    document.getElementById("idm-container").removeAttribute("class");
-
-										/*remove fields
-										document.getElementById("middle_name").style.display = "none";
-										document.getElementsByName('phone_code').value = 'Canada'
-										document.getElementById('phone').value = '613-555-0199';
-										document.getElementById("agree").checked = true;*/
-                })
-        })
 		}
 
-
 			function result_show(){
-				dashboard();
 				var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/od6/public/values?alt=json";
 				address = document.getElementById("eth_address").value;
-				var record = false;
 				$.getJSON(url, function(data) {
 				 var entry = data.feed.entry;
+				 var record = false;
 				 $(entry).each(function(){
 					 if (this.gsx$ethaddress.$t == address){
 						 record = true;
 						 $('.results').prepend('<h2>'+this.gsx$ethaddress.$t+'</h2><p>'+this.gsx$kyc.$t+'</p>');
-						 document.getElementById("kyc").style.display = "none";
-						 document.getElementById("kyc_completed").style.display = "block";
 					 }
 				 });
 				 if (record == false){
-						//document.getElementById('gform-btn').click();
-						document.getElementById("kyc_btn").style.display = "block";
+						document.getElementById('gform-btn').click();
+						dashboard();
 				 }
 				});
 			}
@@ -380,10 +265,10 @@
             try {
                 web3.eth.getBalance(address, function (error, wei) {
                     if (!error) {
-											result_show();
-											//document.getElementById('part').style.display = 'none';
-											//document.getElementById('content').style.display = 'block';
-											//document.getElementById('content').style.opacity = '0';
+													result_show();
+													document.getElementById('part').style.display = 'none';
+													document.getElementById('content').style.display = 'block';
+													document.getElementById('content').style.opacity = '0';
                     }
                 });
             } catch (err) {

@@ -1,9 +1,18 @@
 .myRef{display:none}
 .max-width{max-width:800px;margin:40px auto 0}
 p span{color:#c08dff}
+p.date{color:#97a5bf}
 .grey{color:#eee;display:block}
 .main_bg{background:url(../../images/1.png) bottom right no-repeat}
-.countdown-box{background:rgb(0,0,0,.85);margin-top:60px}
+.countdown-box{background:rgba(0,0,0,.85);margin-top:60px}
+.progress.big{height:2rem}
+.single-roadmap.roadmap-done:after{color:#46bdf4;content:'\f058';font-size:20px;left:1px;border:none;width:22px;height:22px;line-height:20px}
+.single-roadmap h6{position:relative;top:-2px;font-size:1rem}
+.single-roadmap.roadmap-done h6{position:relative;top:-4px}
+.single-roadmap.roadmap-done.roadmap-down h6{position:relative;top:0}
+#eth_address{max-width:380px;background-color:#eee;display:none;margin:0 auto}
+#login-metamask a img{max-width:380px}
+.steps{margin:48px 0}
 /*
 .position{}
   .position a{display:block;position:relative;z-index:1}
@@ -31,7 +40,7 @@ h6 span{color:#97a5bf;font-weight:normal}
   .btn:hover{background-color:#7a0fff!important;transition:all 0.5s}
 .skill-bar-percent{background-image:none;background-color:#7a0fff}
 .team-circle .team-photo:before{background-image:linear-gradient(to top, #7a0fff 0%, #3561eb 100%)}
-.header-txt h1{margin-top:32px}
+.header-txt h1{margin-top:80px}
 h2.lead{font-size:1.5rem!important;font-weight:bold}
 p.lead{padding:0 0 30px}
 h5.blog-title{font-size:1.25em;text-transform:uppercase}
@@ -79,4 +88,6 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
   #crowdsale .text-right{text-align:left!important}
   #crowdsale .text-left{text-align:right!important}
   .mobile{text-align:center}
+  .play-btn > span:last-of-type{color:#fff}
+  .main_bg{background:url(../../images/1_mobile.png) bottom right no-repeat}
 }

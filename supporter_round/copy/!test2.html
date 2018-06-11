@@ -52,7 +52,7 @@
 
 <br><br><br>
 		<!-- Banner/Slider -->
-		<!-- <div id="header" class="col-md-8 offset-md-2 col-sm-12 offset-sm-0 align-items-center max-width">
+		<div id="header" class="col-md-8 offset-md-2 col-sm-12 offset-sm-0 align-items-center max-width">
 			<div class="container">
 					<div class="row col-lg-10 offset-lg-1 col-md-12 offset-md-0 align-items-center text-center" data-animate="fadeInUp" data-delay=".3">
 						<div class="col-sm-12 text no-pd" id="content">
@@ -73,22 +73,16 @@
 								<br>
 							</div>
 						</div>
-		        <div class="text-center">
-							<h3 class="name">Welcome to WRIO Internet OS Supporter Round</h3>
-		        <br>
-		        <h4 class="name">2,500,000 WGD</h4>
-		        <span class="sub-title"><small>$100,000 equivalent*</small></span>
-		         <p><small>* <i>calculated for the default WGD price; more details in the <a href="https://wr.io/WhitePaper.pdf" target="_blank">White Paper</a></i>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></small></p>
-		        </div>
 						<div class="col-sm-12 text no-pd" id="part">
 							<br>
-							<p>After registration you must pass secure KYC process supported by IdentityMind Global and will recieve 15 June the invitation link via email to send ETH and get WGD.
-							<br><br>25,000 WGD per donated 1 ETH, MAX 250,000 WGD.
-							<br>All donations will be used for further pre- Token Sale promotion of the project.
-							<br>Your WGD will be distributed 21 days after the Token Sale that coming 31 July.</p>
+								<h3 class="name">Welcome to WRIO Internet OS Bounty Campaign!</h3>
+								<br>
+								<h4 class="name">Bounty Campaign is over.&nbsp;&nbsp;Registration closed.</h4>
+							<div class="text-center">
 							<br>
-							<h5 class="name">Registration</h5>
-							<small>44 of 100 spots left</small>
+							<p>If you are an existing participant, you can check reward balance by entering your ETH address.</p>
+							<br>
+							<h5 class="name">Check reward balance</h5>
 							<p><input type="text" name="ETH" id="eth_address" placeholder="Your ETH address" required="true"></p>
 							<div id="error">Please enter a valid ETH address.</div>
 						<div class="col-sm-12 text no-pd">
@@ -96,99 +90,8 @@
 								<a href="#" class="btn" onClick="check();">Submit</a>
 							</div>
 							<br><br>
-							<p><b>IMPORTANT:</b> The more WGD you collect, the more tokens you'll be able to obtain during the following rounds of Airdrop held on pro rata basis. More details in the <a href="https://wr.io/WhitePaper.pdf" target="_blank">White Paper</a>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></p>
-							<br>
 							<p class="text-center">Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
-							<br>-->
-
-
-
-
-							<div id="idm-container" style="width: 500px;"></div>
-
-
-							<script type="text/javascript" src="ajax.js"></script>
-
-							    <!--<script type="text/javascript">
-							        var httpRequest = null;
-
-							        function SendRequest () {
-							            if (!httpRequest) {
-							                httpRequest = CreateHTTPRequestObject ();
-							            }
-							            if (httpRequest) {
-							                var url = "https://pluginst.identitymind.com/api/auth";
-							                httpRequest.open ("GET", url, true);    // async
-							                httpRequest.setRequestHeader ("x-api-key", "a8Ue4JVe4s8hIZ3mrbJcw7bFAOHcpIFn6O3VcAD1");
-							                httpRequest.onreadystatechange = OnStateChange;
-							                httpRequest.send (null);
-
-							            }
-							        }
-
-							        function OnStateChange () {
-							            if (httpRequest.readyState == 0 || httpRequest.readyState == 4) {
-							                if (IsRequestSuccessful (httpRequest)) {    // defined in ajax.js
-
-																	console.log(httpRequest.responseText);
-							                }
-							                else {
-							                    alert ("Operation failed.");
-							                }
-							            }
-							        }
-							    </script>-->
-
-
-							  <script>
-								var xhr = new XMLHttpRequest();
-								xhr.onreadystatechange = function() {
-								    if (xhr.readyState == XMLHttpRequest.DONE) {
-								        alert(xhr.responseText);
-								    }
-								}
-								xhr.open('GET', 'https://pluginst.identitymind.com/api/auth', true);
-								xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-								xhr.setRequestHeader("x-api-key", "a8Ue4JVe4s8hIZ3mrbJcw7bFAOHcpIFn6O3VcAD1");
-								xhr.send(null);
-/*
-var options = { method: 'GET',
-  url: 'https://pluginst.identitymind.com/api/auth',
-  headers:
-   { 'x-api-key': 'a8Ue4JVe4s8hIZ3mrbJcw7bFAOHcpIFn6O3VcAD1' } };
-
-  console.log(options);*/
-
-
-							     /* var _idm = {
-							          container_id: "idm-container",
-							          plugin_token: "<PLUGIN_TOKEN>",
-							          required_address_country_list: ["US","GB","CA","ZA","SE","DK"] ,
-							          required_id_country_list:['US::^(?!666|000|9\\d{2})\\d{3}[- ]{0,1}(?!00)\\d{2}[- ]{0,1}(?!0{4})\\d{4}$'],
-							          country_blacklist: ['AR','PR'],
-							          on_response: function(jwtresponse){
-
-							              //handle response jwtresponse here
-							              //A simple example below:
-							              const array = jwtresponse.split('.');
-							              const header = JSON.parse(atob(array[0]));
-							              const response = JSON.parse(atob(array[1]));
-							              const signature = array[2];
-							              alert("Result from Identitymind: " + response.kyc_result);
-
-							          }
-							      };
-
-							      (function(){var a=document.createElement('script');var m=document.getElementsByTagName('script')[0];a.src='https://cd1st.identitymind.com/idm.min.js';m.parentNode.insertBefore(a,m)})()
-*/
-							  </script>
-
-
-
-
-
-
-
+							<br>
 						</div>
 			</div>
 			</div><!-- .row -->
@@ -242,13 +145,50 @@ var options = { method: 'GET',
     </script>
 
 
+
+											<!--<div class="results"></div>
+											<script>
+											 // ID of the Google Spreadsheet
+											 var spreadsheetID = "1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ";
+											 // Make sure it is public or set to Anyone with link can view
+											 var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
+											 $.getJSON(url, function(data) {
+												var entry = data.feed.entry;
+												$(entry).each(function(){
+													// Column names are name, age, etc.
+													if (this.gsx$ethaddress.$t == '0x3b6Df61328E519B243437b1C65146A5943e83231'){
+														$('.results').prepend('<h2>'+this.gsx$ethaddress.$t+'</h2><p>'+this.gsx$kyc.$t+'</p>');
+													}
+												});
+											 });
+										 </script>-->
+
+
+	<div class="results"></div>
 	<script>
 		function result_show(){
-		$.ajax("https://docs.google.com/spreadsheets/d/1d0XkuzJkQqFDfC4o6bNiOxWf7Y_mQQqKjpj2OIIALS4/gviz/tq?tqx=out:html&tq=SELECT+B+WHERE+A+CONTAINS+%27" + eth_address.value + "%27").done(function(result){
+			var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/od6/public/values?alt=json";
+			address = document.getElementById("eth_address").value
+			$.getJSON(url, function(data) {
+			 var entry = data.feed.entry;
+			 $(entry).each(function(){
+				 if (this.gsx$ethaddress.$t == address){
+					 $('.results').prepend('<h2>'+this.gsx$ethaddress.$t+'</h2><p>'+this.gsx$kyc.$t+'</p>');
+				 }
+			 });
+			});
+		/*$.ajax("https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/od6/public/values?alt=json").done(function(result){
 			$('#reward').html(result).show();
 			document.getElementById('content').style.opacity = '100';
 			document.getElementById('content').style.transition = 'opacity 1000ms';
-		});
+			 $.getJSON(url, function(data) {
+			  var entry = data.feed.entry;
+			  $(entry).each(function(){
+			    $('#reward').prepend('<h2>'+this.gsx$ethaddress.$t+'</h2><p>'+this.gsx$kyc.$t+'</p>');
+			  });
+			 });
+
+		});*/
 		}
 	</script>
 	<script type="text/javascript">
