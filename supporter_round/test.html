@@ -18,9 +18,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<style>
 	html,body{overflow:inherit!important}
-	#logout{display:none}
-	#dashboard{display:none}
-	#kyc_completed{display:none}
+	#logout,#dashboard,#kyc_completed{display:none}
+	#country-section-title,#personal-section-title,#contact-section-title{display:none}
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
 	#tokeswidth,#tokeswidth2{transition:all 0.5s ease-out;width:100%}
 	</style>
@@ -39,7 +38,7 @@
 					<img class="logo logo-light" alt="logo" src="../images/logo-white.png" srcset="../images/logo-white2x.png 2x">
 				</a>
 
-				<ul class="navbar-nav navbar-btns animated remove-animation">
+				<ul class="navbar-nav navbar-btns animated" data-animate="fadeInUp" data-delay=".75">
 					<li id="affiliates" class="nav-item"><a class="nav-link btn btn-outline menu-link" href="https://affiliates.wr.io" data-animate="fadeInDown" data-delay="1">Affiliates</a></li>
 					<li id="wrio" class="nav-item"><a class="nav-link btn btn-outline menu-link" href="https://wr.io" data-animate="fadeInDown" data-delay="1">Back to wr.io</a></li>
 					<li id="logout" class="nav-item"><a class="nav-link btn btn-outline menu-link" href="https://wr.io/supporter_round/" data-animate="fadeInDown" data-delay="1">Logout</a></li>
@@ -54,123 +53,119 @@
 			<form id="gform" method="POST" data-email="info@webrunes.com"
 			   action="https://script.google.com/macros/s/AKfycbyZBkpxDstfnhec6qPW3uAA0E4aa6elbtCC01ai/exec" onsubmit="return checkForm(this);">
 		    <!-- change the form action to your script url -->
-			<div class="container align-items-center">
+			<div id="login_form" class="container align-items-center">
 					<div class="row col-sm-12" data-animate="fadeInUp" data-delay=".3">
-						<div class="myRef alert alert-primary" data-animate="fadeInUp" data-delay="1" id="ref0">You've been invited by one of our numerous ambassadors. Enjoy your Extra +1% bonus!</div>
 						<div class="col-sm-12 text no-pd">
 
-			<div class="row text-center">
-				<div class="col">
-					<div class="section-head">
-						<br><br><br>
-						<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0.5">Welcome to Supporter Round!
-							<span>Welcome to Supporter Round!</span>
-						</h2>
-						<div class="alert alert-primary animated" data-animate="fadeInUp" data-delay=".75">Because of the excessive numbers of participants the entire Support Round pool will be distributed exactly on the basis of 25,000 WGD per 1 ETH donated, and special Airdrop Share will be null!
-						<br>All funds will be used for further pre-Token Sale promotion of the project.</div>
-					</div>
-				</div>
-			</div>
+						<div class="row text-center">
+							<div class="col">
+								<div class="section-head">
+									<br><br><br>
+									<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0.5">Welcome to Supporter Round!
+										<span>Welcome to Supporter Round!</span>
+									</h2>
+									<div class="alert alert-primary animated" data-animate="fadeInUp" data-delay=".75">Because of the excessive numbers of participants the entire Support Round pool will be distributed exactly on the basis of 25,000 WGD per 1 ETH donated, and special Airdrop Share will be null!
+									<br>All funds will be used for further pre-Token Sale promotion of the project.</div>
+								</div>
+							</div>
+						</div>
 
-			<div class="row roadmap-list align-items-end animated col-md-12 offset-md-0 col-sm-4 offset-sm-4" data-animate="fadeInUp" data-delay="1">
-				<div class="col-lg">
-					<div class="single-roadmap roadmap-sm roadmap-done">
-						<h6>Pre-Sale</h6>
-						<p>10,000,000 WGD</p>
-						<p class="date">$200,000 collected</p>
-					</div>
-				</div><!-- .col  -->
-				<div class="col-lg width-0">
-					<div class="single-roadmap roadmap-down roadmap-done">
-						<h6>Bounty Campaign</h6>
-						<p>12,000,000 WGD</p>
-						<p class="date">29 April 2018</p>
-					</div>
-				</div><!-- .col  -->
-				<div class="col-lg">
-					<div class="single-roadmap roadmap-lg roadmap-done">
-						<h6>Airdrop Campaign</h6>
-						<p>5,000,000 WGD</p>
-						<p class="date">2 May 2018</p>
-					</div>
-				</div><!-- .col  -->
-				<div class="col-lg width-0">
-					<div class="single-roadmap roadmap-down roadmap-done">
-						<h6>Supporter Round</h6>
-						<p>2,500,000 WGD + special Airdrop Share</p>
-						<p class="date">We're here</p>
-					</div>
-				</div><!-- .col  -->
-				<div class="col-lg">
-					<div class="single-roadmap roadmap-lg">
-						<h6>Special Round</h6>
-						<p>20,000,000 WGD</p>
-						<p class="date">48 prior Token Sale: Stage 1</p>
-						<p class="date">Whitelist already full</p>
-					</div>
-				</div><!-- .col  -->
-				<div class="col-lg width-0">
-					<div class="single-roadmap roadmap-down">
-						<h6>Stage 1</h6>
-						<p>40,000,000 WGD</p>
-						<p class="date">31 July 2018</p>
-					</div>
-				</div><!-- .col  -->
-				<div class="col-lg">
-					<div class="single-roadmap roadmap-lg">
-						<h6>Stage 2</h6>
-						<p>80,000,000 WGD</p>
-					</div>
-				</div><!-- .col  -->
-				<div class="col-lg width-0">
-					<div class="single-roadmap roadmap-down">
-						<h6>Stage 3</h6>
-						<p>160,000,000 WGD</p>
-					</div>
-				</div><!-- .col  -->
-				<div class="col-lg">
-					<div class="single-roadmap roadmap-lg">
-						<h6>Buyback Fund</h6>
-						<p>Bancor support</p>
-					</div>
-				</div><!-- .col  -->
-			</div><!-- .row  -->
+						<div class="row roadmap-list align-items-end animated col-md-12 offset-md-0 col-sm-4 offset-sm-4" data-animate="fadeInUp" data-delay="1">
+							<div class="col-lg">
+								<div class="single-roadmap roadmap-sm roadmap-done">
+									<h6>Pre-Sale</h6>
+									<p>10,000,000 WGD</p>
+									<p class="date">$200,000 collected</p>
+								</div>
+							</div><!-- .col  -->
+							<div class="col-lg width-0">
+								<div class="single-roadmap roadmap-down roadmap-done">
+									<h6>Bounty Campaign</h6>
+									<p>12,000,000 WGD</p>
+									<p class="date">29 April 2018</p>
+								</div>
+							</div><!-- .col  -->
+							<div class="col-lg">
+								<div class="single-roadmap roadmap-lg roadmap-done">
+									<h6>Airdrop Campaign</h6>
+									<p>5,000,000 WGD</p>
+									<p class="date">2 May 2018</p>
+								</div>
+							</div><!-- .col  -->
+							<div class="col-lg width-0">
+								<div class="single-roadmap roadmap-down roadmap-done">
+									<h6>Supporter Round</h6>
+									<p>2,500,000 WGD + special Airdrop Share</p>
+									<p class="date">We're here</p>
+								</div>
+							</div><!-- .col  -->
+							<div class="col-lg">
+								<div class="single-roadmap roadmap-lg">
+									<h6>Special Round</h6>
+									<p>20,000,000 WGD</p>
+									<p class="date">48 prior Token Sale: Stage 1</p>
+									<p class="date">Whitelist already full</p>
+								</div>
+							</div><!-- .col  -->
+							<div class="col-lg width-0">
+								<div class="single-roadmap roadmap-down">
+									<h6>Stage 1</h6>
+									<p>40,000,000 WGD</p>
+									<p class="date">31 July 2018</p>
+								</div>
+							</div><!-- .col  -->
+							<div class="col-lg">
+								<div class="single-roadmap roadmap-lg">
+									<h6>Stage 2</h6>
+									<p>80,000,000 WGD</p>
+								</div>
+							</div><!-- .col  -->
+							<div class="col-lg width-0">
+								<div class="single-roadmap roadmap-down">
+									<h6>Stage 3</h6>
+									<p>160,000,000 WGD</p>
+								</div>
+							</div><!-- .col  -->
+							<div class="col-lg">
+								<div class="single-roadmap roadmap-lg">
+									<h6>Buyback Fund</h6>
+									<p>Bancor support</p>
+								</div>
+							</div><!-- .col  -->
+						</div><!-- .row  -->
 						<br><br>
-						<div class="text-center">
+						<div class="text-center animated" data-animate="fadeInUp" data-delay=".05">
 							 <h4>Total tokens 2,500,000 WGD</h4>
 							 <div class="progress progress-line-info big">
-								<div id="tokeswidth" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+								<div id="tokeswidth" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
 								<b><span class="tokens"></span> WGD left</b>
 								</div>
 							</div>
-							<br>
-							<div class="text-left">
-							<br>
-							<br>
-
-							<div class="col-sm-12 text-center">
-								<h5 class="name">Your ETH address</h5>
-								<input type="text" name="ETH" id="eth_address" placeholder="Your ETH address" required="true" disabled>
-								<div id="error">Please enter a valid ETH address.</div>
-								<div class="col-sm-12 text text-center">
-										<div id="login-metamask"></div>
-								</div>
-							</div>
-							</div><!-- .row -->
-							<br><br>
-							<p class="text-center">Non-tech savvy or have problems? <a href="mailto:info@webrunes.com?Subject=Manual%20Processing&Body=Hello%20webRunes%2C%0Aplease%20contact%20me%20for%20the%20manual%20processing.%0A%0AThank%20you." target="_blank">Contact us</a> for the manual processing.</p>
-							<br>
 						</div>
+						<br>
+						<br>
+						<br>
+
+						<div class="col-sm-12 text-center animated" data-animate="fadeInUp" data-delay=".1">
+							<h5 class="name">Your ETH address</h5>
+							<input type="text" name="ETH" id="eth_address" placeholder="Your ETH address" required="true" disabled>
+							<div id="error">Please enter a valid ETH address.</div>
+							<div class="col-sm-12 text text-center">
+									<div id="login-metamask"></div>
+							</div>
+						<br><br>
+						<p>Non-tech savvy or have problems? <a href="mailto:info@webrunes.com?Subject=Manual%20Processing&Body=Hello%20webRunes%2C%0Aplease%20contact%20me%20for%20the%20manual%20processing.%0A%0AThank%20you." target="_blank">Contact us</a> for the manual processing.</p>
+						<br>
+					</div>
 
 			</div>
 			</div><!-- .row -->
 		</div><!-- .container -->
 
-	<div id="dashboard" class="dashboard">
+	<div id="dashboard" name="step1" class="dashboard">
 		<div class="container">
 			<div class="row">
-				<br><br><br><br>
-				<div class="col-sm-12 text text-center">
+				<div class="col-sm-12 text text-center animated dashboard_tokens" data-animate="fadeInUp" data-delay=".25">
 					 <h4>Total tokens 2,500,000 WGD</h4>
 					 <div class="progress progress-line-info big">
 						<div id="tokeswidth2" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:100%">
@@ -178,54 +173,80 @@
 						</div>
 					</div>
 				</div>
-				<br><br>
-				<div class="col-md-8 offset-md-2 col-sm-12 text steps">
-					 <h4>Step 1. Logged as</h4>
-	 				 <span id="logged_as"></span>
+				<div class="col-sm-12 steps animated" data-animate="fadeInUp" data-delay=".5">
+					<div class="row">
+						<div class="col-sm-2 text-center">
+							<img src="../assets/images/icons/wallet.png" alt="">
+						</div>
+						<div class="col-sm-10">
+						 <h4>Step 1 &middot; Logged as</h4>
+		 				 <h5 id="logged_as"></h5>
+						 <p>Text</p>
+						 <br>
+						 <a href="#step2_anchor" class="btn">Next</a>
+						</div>
+						<div class="col-sm-12" id="step2_anchor"></div>
+					</div>
 				</div>
-				<div class="col-md-8 offset-md-2 col-sm-12 text steps">
-					 <h4>Step 2. How much WGD would you like to buy?</h4>
-        <select id="select_amount" style="display: none;">
-            <option value="1" required>25,000 WGD for 1 ETH &middot; MIN</option>
-            <option value="2">50,000 WGD for 2 ETH</option>
-            <option value="3">75,000 WGD for 3 ETH</option>
-            <option value="4">100,000 WGD for 4 ETH</option>
-            <option value="5">125,000 WGD for 5 ETH</option>
-            <option value="6">150,000 WGD for 6 ETH</option>
-            <option value="7">175,000 WGD for 7 ETH</option>
-            <option value="8">200,000 WGD for 8 ETH</option>
-            <option value="9">225,000 WGD for 9 ETH</option>
-            <option value="10">250,000 WGD for 10 ETH &middot; MAX</option>
-            <option value="0" disabled>Want more? Contact us at info@webrunes.com for the manual processing</option>
-        </select>
-				<br><br>
-				<p><b>IMPORTANT:</b> The more WGD you collect, the more tokens you'll be able to obtain during the following rounds of Airdrop held on pro rata basis. More details in the <a href="https://wr.io/WhitePaper.pdf" target="_blank">White Paper</a></i>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></p>
-				<p><label for="resident"><input type="checkbox" name="resident" value="resident" id="resident" required="true">&nbsp;I hereby confirm that I am not a resident nor a citizen of the United States of America or other country, whose legislation does not allow to buy or operate WGD tokens</label></p>
-				<p><label for="resident"><input type="checkbox" name="resident" value="resident" id="resident" required="true">&nbsp;I accept the <a href="https://wr.io/TokenPurchaseAgreement.pdf" target="_blank">Token Sale Agreement</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup> and understand, что получу токены 31 July с началом Token Sale</label></p>
-		 </div>
-		 <div class="col-md-8 offset-md-2 col-sm-12 text steps">
-				<h4>Step 3. KYC process</h4>
+				<div id="step2" class="col-sm-12 steps animated" data-animate="fadeInUp" data-delay=".6">
+					<div class="row">
+						<div class="col-sm-2 text-center">
+							<img src="../assets/images/icons/user-centric.png" alt="">
+						</div>
+						<div class="col-sm-10">
+						 <h4>Step 2 &middot; How much WGD would you like to buy?</h4>
+	        	<select id="WGD" style="display:none">
+	            <option value="1" required>25,000 WGD for 1 ETH &middot; MIN</option>
+	            <option value="2">50,000 WGD for 2 ETH</option>
+	            <option value="3">75,000 WGD for 3 ETH</option>
+	            <option value="4">100,000 WGD for 4 ETH</option>
+	            <option value="5">125,000 WGD for 5 ETH</option>
+	            <option value="6">150,000 WGD for 6 ETH</option>
+	            <option value="7">175,000 WGD for 7 ETH</option>
+	            <option value="8">200,000 WGD for 8 ETH</option>
+	            <option value="9">225,000 WGD for 9 ETH</option>
+	            <option value="10">250,000 WGD for 10 ETH &middot; MAX</option>
+	            <option value="0" disabled>Want more? Contact us at info@webrunes.com for the manual processing</option>
+	        	</select>
+						<br><br>
+						<p><b>IMPORTANT:</b> The more WGD you collect, the more tokens you'll be able to obtain during the following rounds of Airdrop held on pro rata basis. More details in the <a href="https://wr.io/WhitePaper.pdf" target="_blank">White Paper</a></i>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></p>
+						<p><label for="resident"><input type="checkbox" name="resident" value="resident" id="resident" required>&nbsp;I hereby confirm that I am not a resident nor a citizen of the United States of America or other country, whose legislation does not allow to buy or operate WGD tokens</label></p>
+						<p><label for="agreement"><input type="checkbox" name="agreement" value="agreement" id="agreement" required>&nbsp;I accept the <a href="https://wr.io/TokenPurchaseAgreement.pdf" target="_blank">Token Sale Agreement</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup> and understand, что получу токены 31 July с началом Token Sale</label></p>
+						<input id="form_email" type="text" name="Email" hidden>
+						<input id="form_ethaddress" type="text" name="ETHaddress" hidden>
+						<input id="form_firstname" type="text" name="FirstName" hidden>
+						<input id="form_lastname" type="text" name="LastName" hidden>
+						<input id="form_kyc" type="text" name="KYC" hidden>
+						<br>
+						<a href="#step3_anchor" class="btn" onClick="step3();">Next</a>
+			 		</div>
+					<div class="col-sm-12" id="step3_anchor"></div>
+				</div>
+			 </div>
+		 <div id="step3" class="col-sm-12 steps animated" data-animate="fadeInUp" data-delay=".7">
+				<h4>Step 3 &middot; KYC process</h4>
 				<div id="kyc">
 					<div id="idm-container"></div>
-					<input id="kyc_btn" class="btn" type="submit" name="SubmitButton" value="Submit">
-				<div>
+					<input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
+					<div class="idm"></div>
+				</div>
 				<div id="kyc_completed">
-					Completed
-				<div>
+					<p><b>Status:</b> Under manual review.
+						<br>Ваши документы получены, однако требуют manual проверки. После проверки вы получите уведомление на почту. Если у вас есть вопросы, то contact us at <a href="mailto:info@webrunes.com" target="_blank">info@webRunes.com</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></p>
+				</div>
+		</div>
+			<div id="step4" class="col-md-8 offset-md-2 col-sm-12 text steps animated" data-animate="fadeInUp" data-delay=".8">
+				<h4>Step 4 &middot; Payment</h4>
+			  <div id="pay-button"></div>
 			</div>
- 		 <div class="col-md-8 offset-md-2 col-sm-12 text steps">
-				<h4>Step 4. Payment</h4>
-        <div id="pay-button"></div>
-			</div>
- 		 <div class="col-md-8 offset-md-2 col-sm-12 text steps">
-				<h4>Completed successfully!</h4>
+			<div id="step5" class="col-md-8 offset-md-2 col-sm-12 text steps animated" data-animate="fadeInUp" data-delay=".9">
+				<h4>Step 5 &middot; Check your balance</h4>
 			</div>
 		</div>
 		</div>
 	</div>
 	<!-- Start Section -->
 
-			<input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
 	</form>
 	</div>
 
@@ -235,8 +256,8 @@
 	<script type="text/javascript">
 	function checkForm(form) // Submit button clicked
 		{
-			gform.SubmitButton.disabled = true;
-			gform.SubmitButton.value = "Please wait...";
+			/*gform.SubmitButton.disabled = true;
+			gform.SubmitButton.value = "Please wait...";*/
 			return true;
 		}
 	</script>
@@ -286,13 +307,13 @@
 		);
 
 		function dashboard(){
+			$('html,body').scrollTop(0);
 			document.getElementById('tokeswidth2').style.width = percent + "%";
-			document.getElementById("gform").style.display = "none";
+			document.getElementById("login_form").style.display = "none";
 			document.getElementById("affiliates").style.display = "none";
 			document.getElementById("wrio").style.display = "none";
 			document.getElementById("logout").style.display = "block";
 			document.getElementById("dashboard").style.display = "block";
-
 
 
 			var account = web3.eth.defaultAccount || new Web3(window.web3.currentProvider).eth.defaultAccount;
@@ -311,23 +332,34 @@
                             const response = JSON.parse(atob(array[1]));
                             const signature = array[2];
                             // here save jwtresponse to google docs
-                            if (response.kyc_result === 'ACCEPT') {
+														document.getElementById("form_ethaddress").value = web3.eth.defaultAccount;
+												    document.getElementById("form_email").value = response.form_data.email;
+												    document.getElementById("form_firstname").value = response.form_data.first_name;
+												    document.getElementById("form_lastname").value = response.form_data.last_name;
+												    document.getElementById("form_kyc").value = response.kyc_result;
+
+												    document.getElementById('gform-btn').click();
+														//end
+
+                            //if (response.kyc_result === 'ACCEPT') {
                                 var sel = document.getElementById('select_amount');
                                 var address = '0x3b6Df61328E519B243437b1C65146A5943e83231';
                                 sel.style.display = '';
                                 wrio_metamask_plugin('pay-button', address, sel.value);
                                 sel.onchange = () => wrio_metamask_plugin('my_container', address, sel.value);
-                            }
+                            //}
                         }
                     };
                     (function(){var a=document.createElement('script');var m=document.getElementsByTagName('script')[0];a.src='https://cd1st.identitymind.com/idm.min.js';m.parentNode.insertBefore(a,m)})()
                     document.getElementById("idm-container").removeAttribute("class");
 
 										/*remove fields
-										document.getElementById("middle_name").style.display = "none";
 										document.getElementsByName('phone_code').value = 'Canada'
-										document.getElementById('phone').value = '613-555-0199';
-										document.getElementById("agree").checked = true;*/
+										document.getElementById('phone').value = '613-555-0199';*/
+										document.getElementById("middle_name").style.display = "none";
+										document.getElementById("agree").checked = true;
+										document.getElementById("agree").style.display = "none";
+										document.getElementById("agree_checkbox").style.display = "none";
                 })
         })
 		}
@@ -350,7 +382,7 @@
 				 });
 				 if (record == false){
 						//document.getElementById('gform-btn').click();
-						document.getElementById("kyc_btn").style.display = "block";
+						document.getElementById("gform-btn").style.display = "block";
 				 }
 				});
 			}
@@ -359,6 +391,21 @@
 			var eth_address;
 			function onload() {
 					eth_address = document.getElementById('eth_address');
+			}
+
+			let anchorlinks = document.querySelectorAll('a[href^="#"]')
+
+			for (let item of anchorlinks) { // relitere
+			    item.addEventListener('click', (e)=> {
+			        let hashval = item.getAttribute('href')
+			        let target = document.querySelector(hashval)
+			        target.scrollIntoView({
+			            behavior: 'smooth',
+			            block: 'start'
+			        })
+			        history.pushState(null, null, hashval)
+			        e.preventDefault()
+			    })
 			}
 		</script>
 

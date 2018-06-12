@@ -5,14 +5,52 @@ p.date{color:#97a5bf}
 .grey{color:#eee;display:block}
 .main_bg{background:url(../../images/1.png) bottom right no-repeat}
 .countdown-box{background:rgba(0,0,0,.85);margin-top:60px}
-.progress.big{height:2rem}
+.progress.big{height:3rem;font-size:1rem}
 .single-roadmap.roadmap-done:after{color:#46bdf4;content:'\f058';font-size:20px;left:1px;border:none;width:22px;height:22px;line-height:20px}
 .single-roadmap h6{position:relative;top:-2px;font-size:1rem}
 .single-roadmap.roadmap-done h6{position:relative;top:-4px}
 .single-roadmap.roadmap-done.roadmap-down h6{position:relative;top:0}
-#eth_address{max-width:380px;background-color:#eee;display:none;margin:0 auto}
+#eth_address{max-width:385px;background-color:#eee;display:none;margin:0 auto}
 #login-metamask a img{max-width:380px}
-.steps{margin:48px 0}
+.steps{margin:50px 0}
+.steps h4{margin:0 0 30px}
+.idm-container .idm-col-half{margin:10px 5px;width:100%}
+.idm-container input, .idm-container select option, .idm-container select{background-color:#fff}
+#dob-container{margin:30px 5px}
+.idm-container h4,#phone-container{margin:0}
+.idm-container input[type="checkbox"]+label:after{left:-.4em!important}
+#country-section,#personal-section{margin:0 0 30px}
+.idm-row{margin:20px 0}
+#personal-section{margin-top:-20px}
+#country-section hr{display:none}
+#email-container{margin:-30px 0 40px}
+#idm-form-doc select{border-radius:3px}
+#recaptcha_error_message{display:block}
+#first_name,#last_name,#first_name_hidden,#middle_name_hidden{text-transform:uppercase}
+/*.idm-container input[type=text],.idm-container input[type=email],.idm-container textarea{padding:0!important}*/
+.idm-container hr{display:none}
+#phone{margin-left:12px}
+#phone-container select{min-width:200px}
+#idm-form-doc h3{font-size:1.4em;margin:30px 0 0}
+#next,#form-submit{background-color:#3561eb;width:auto;font-family:"Poppins",sans-serif;font-size:12px;line-height:46px;font-weight:600;padding:0 34px;text-align:center;text-transform:uppercase;color:#fff;min-width:160px;max-width:100%;border:none;box-sizing:border-box;transition:all 0.5s;position:relative;z-index:2}
+  #next:hover,#form-submit:hover{background-color:#7a0fff!important;transition:all 0.5s;cursor:pointer}
+#form-edit,#captureButton,#captureSelfie{display:block;width:auto;font-family:"Poppins",sans-serif;font-size:12px;line-height:46px;font-weight:600;padding:0 34px;text-align:center;min-width:160px;max-width:100%;border:none;box-sizing:border-box;position:relative;z-index:2}
+.select2-container--default .select2-selection--single .select2-selection__rendered{font-size:1em;border-radius:.25rem;background-color:#fff;color:#000}
+.select2-selection.select2-selection--single{border-radius:.25rem;background-color:#fff;color:#000}
+.select2-container--default .select2-selection--single .select2-selection__arrow:after{color:#000}
+.select2-container--open{background-color:#fff;color:#000}
+.select2-container--default .select2-results__option[aria-selected=true]{background-color:#fff;color:#000}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:#1e90ff;color:#fff}
+.select2-container--default .select2-selection--single:focus,.select2-container--default .select2-selection--single:active{background-color:#fff;color:#000}
+.select2-results__option{background-color:#fff;color:#000}
+.dashboard_tokens{margin:50px 0}
+.dashboard h4{margin-top:20px}
+.dashboard .idm{background:url(../../images/idm.png) center center no-repeat;width:240px;height:64px;margin:20px auto}
+.dashboard .idm-container select:focus,.dashboard .idm-container select:active{background-color:#fff;color:#000;border-color:#80bdff}
+.dashboard .idm-container select option{background-color:#fff;color:#000}
+.dashboard .idm-container input:focus{background-color:#fff;color:#000;border-color:#80bdff}
+.dashboard .idm-container input,.dashboard .idm-container select option,.dashboard .idm-container select{padding:0 12px!important;line-height:2.6em;margin: 12px 0}
+.dashboard .idm-container h4{color:#fff}
 /*
 .position{}
   .position a{display:block;position:relative;z-index:1}
@@ -47,7 +85,7 @@ h5.blog-title{font-size:1.25em;text-transform:uppercase}
 .single-chart .sub-heading{padding-bottom:40px}
 .why .blog-texts{padding:20px 0 40px}
 .blog-texts p{color:#a2b4d2}
-.text input[type=text],.text input[type=email],textarea{background-color:#f4f4ff;border:1px solid #ced4da;border-radius:.25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;margin:12px 0;padding:4px 12px;width:100%}
+.text input[type=text],.text input[type=email],textarea{line-height:2.6rem;background-color:#f4f4ff;border:1px solid #ced4da;border-radius:.25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;margin:12px 0;padding:4px 12px;width:100%}
 .text input[type=text]:focus,.text input[type=email]:focus,textarea:focus{color:#495057;background-color:#fff;border-color:#80bdff;outline:0;box-shadow:0 0 0 0.2rem rgba(0,123,255,.25)}
 textarea{width:100%}
 .team-circle .team-title{font-size:1em}
