@@ -26,7 +26,8 @@ p.date{color:#97a5bf}
 #email-container{margin:-30px 0 40px}
 #idm-form-doc select{border-radius:3px}
 #recaptcha_error_message{display:block}
-#first_name,#last_name,#first_name_hidden,#middle_name_hidden{text-transform:uppercase}
+#first_name,#last_name,#middle_name{clear:both}
+#first_name,#last_name,#middle_name,#first_name_hidden,#last_name_hidden,#middle_name_hidden{text-transform:uppercase}
 /*.idm-container input[type=text],.idm-container input[type=email],.idm-container textarea{padding:0!important}*/
 .idm-container hr{display:none}
 #phone{margin-left:12px}
@@ -51,6 +52,7 @@ p.date{color:#97a5bf}
 .dashboard .idm-container input:focus{background-color:#fff;color:#000;border-color:#80bdff}
 .dashboard .idm-container input,.dashboard .idm-container select option,.dashboard .idm-container select{padding:0 12px!important;line-height:2.6em;margin: 12px 0}
 .dashboard .idm-container h4{color:#fff}
+.dashboard .btn{max-width:200px}
 /*
 .position{}
   .position a{display:block;position:relative;z-index:1}
@@ -128,4 +130,8 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
   .mobile{text-align:center}
   .play-btn > span:last-of-type{color:#fff}
   .main_bg{background:url(../../images/1_mobile.png) bottom right no-repeat}
+  .dashboard h4{margin-top:20px;display:block;text-align:center}
+  .dashboard .btn{display:block;font-size:12px;min-width:160px;max-width:200px;line-height:46px;padding:0 34px;margin:auto}
+  .idm-row h4{text-align:left}
+  #phone{margin:0}
 }

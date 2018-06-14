@@ -175,9 +175,9 @@
 		</div><!-- .container -->
 
 
-	<div id="balance" class="balance col-md-8 offset-md-2 col-sm-12 offset-sm-0 align-items-center max-width">
+	<div id="balance" class="balance">
 		<div class="container">
-			<div class="row col-lg-10 offset-lg-1 col-md-12 offset-md-0 align-items-center text-center">
+			<div class="row">
 				<div class="col-sm-12 text no-pd" id="content">
 					<h3>Your WGD balance is
 						<br><span id="empty"><h1>0</h1><h6>unregistered user</h6></span>
@@ -454,21 +454,19 @@
 			)
 		);
 
-		function logged(){
-			$('html,body').scrollTop(0);
-			document.getElementById("login_form").style.display = "none";
-			document.getElementById("affiliates").style.display = "none";
-			document.getElementById("wrio").style.display = "none";
-			document.getElementById("logout").style.display = "block";
-		}
 
-		function check_balance(){
+
+		check_balance(){
 			logged();
 			document.getElementById("balance").style.display = "block";
 		}
 
 		function dashboard(){
-			logged();
+			$('html,body').scrollTop(0);
+			document.getElementById("login_form").style.display = "none";
+			document.getElementById("affiliates").style.display = "none";
+			document.getElementById("wrio").style.display = "none";
+			document.getElementById("logout").style.display = "block";
 			document.getElementById('tokeswidth2').style.width = percent + "%";
 			document.getElementById("dashboard").style.display = "block";
 
@@ -524,6 +522,7 @@
 		}
 
 			function result_show(){
+				dashboard();
 				var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/od6/public/values?alt=json";
 				address = document.getElementById("eth_address").value;
 				var record = false;
@@ -533,7 +532,6 @@
 					 if (this.gsx$status.$t == 'Completed'){
 						 check_balance();
 					 } else if (this.gsx$ethaddress.$t == address){
-		 				 dashboard();
 						 record = true;
 						 wgd_reserved_amount = this.gsx$wgd.$t;
 						 $('#reserved_amount').prepend(''+this.gsx$wgd.$t+' for '+parseInt(wgd_reserved_amount)/25+' ETH');

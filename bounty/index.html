@@ -26,7 +26,7 @@
 	#reward td{font-size:140px;color:#7a0fff;text-align:center}
 	#empty{color:#7a0fff;position:absolute;top:60px;display:block;margin:0 auto;width:100%}
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
-	#eth_address{max-width:300px}
+	#bounty_address{max-width:300px}
 	</style>
 </head>
 
@@ -82,7 +82,7 @@
 							<p>If you are an existing participant, you can check reward balance by entering your ETH address.</p>
 							<br>
 							<h5 class="name">Check reward balance</h5>
-							<p><input type="text" name="ETH" id="eth_address" placeholder="Your ETH address" required="true"></p>
+							<p><input type="text" name="ETH" id="bounty_address" placeholder="Your ETH address" required="true"></p>
 							<div id="error">Please enter a valid ETH address.</div>
 						<div class="col-sm-12 text no-pd">
 							<div class="text-center">
@@ -126,7 +126,7 @@
         function check() {
 					document.getElementById('error').style.opacity = '0';
             var address, wei, balance
-            address = document.getElementById("eth_address").value
+            address = document.getElementById("bounty_address").value
             try {
                 web3.eth.getBalance(address, function (error, wei) {
                     if (!error) {
@@ -146,7 +146,7 @@
 
 	<script>
 		function result_show(){
-		$.ajax("https://docs.google.com/spreadsheets/d/1d0XkuzJkQqFDfC4o6bNiOxWf7Y_mQQqKjpj2OIIALS4/gviz/tq?tqx=out:html&tq=SELECT+B+WHERE+A+CONTAINS+%27" + eth_address.value + "%27").done(function(result){
+		$.ajax("https://docs.google.com/spreadsheets/d/1d0XkuzJkQqFDfC4o6bNiOxWf7Y_mQQqKjpj2OIIALS4/gviz/tq?tqx=out:html&tq=SELECT+B+WHERE+A+CONTAINS+%27" + bounty_address.value + "%27").done(function(result){
 			$('#reward').html(result).show();
 			document.getElementById('content').style.opacity = '100';
 			document.getElementById('content').style.transition = 'opacity 1000ms';
@@ -154,9 +154,9 @@
 		}
 	</script>
 	<script type="text/javascript">
-		var eth_address;
+		var bounty_address;
 		function onload() {
-				eth_address = document.getElementById('eth_address');
+				bounty_address = document.getElementById('bounty_address');
 		}
 	</script>
 
