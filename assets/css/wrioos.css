@@ -130,7 +130,7 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
   .mobile{text-align:center}
   .play-btn > span:last-of-type{color:#fff}
   .main_bg{background:url(../../images/1_mobile.png) bottom right no-repeat}
-  .dashboard h4{margin-top:20px;display:block;text-align:center}
+  .dashboard h4{margin-top:20px;display:block}
   .dashboard .btn{display:block;font-size:12px;min-width:160px;max-width:200px;line-height:46px;padding:0 34px;margin:auto}
   .idm-row h4{text-align:left}
   #phone{margin:0}

@@ -1,4 +1,4 @@
-
+<!-- A working version, but would be great to made refactoring, optimize, beautify and move js into a separate file -->
 <!DOCTYPE html>
 <html lang="en" class="js">
 <head>
@@ -19,10 +19,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<style>
 	html,body{overflow:inherit!important}
+	#content{opacity:0;transition:all 2000ms}
+	#reward{font-size:140px;color:#7a0fff;text-align:center}
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
 	#tokeswidth,#tokeswidth2{transition:all 0.5s ease-out;width:100%}
 	#step2,#step3,#step4,#step5{opacity:.5;transition:all 0.5s}
-	#logout,#balance,#dashboard,#reserved,#kyc_manual_review,#kyc_completed,
+	#logout,#balance_dashboard,#dashboard,#reserved,#kyc_manual_review,#kyc_completed,
 	#country-section-title,#personal-section-title,#contact-section-title,
 	#step2_body,#step3_body,#step4_body,#step5_body
 	{display:none}
@@ -175,23 +177,21 @@
 		</div><!-- .container -->
 
 
-	<div id="balance" class="balance col-md-8 offset-md-2 col-sm-12 offset-sm-0 align-items-center max-width">
+	<div id="balance_dashboard" class="col-md-8 offset-md-2 col-sm-12 offset-sm-0 align-items-center max-width">
 		<div class="container">
 			<div class="row col-lg-10 offset-lg-1 col-md-12 offset-md-0 align-items-center text-center">
 				<div class="col-sm-12 text no-pd" id="content">
-					<h3>Your WGD balance is
-						<br><span id="empty"><h1>0</h1><h6>unregistered user</h6></span>
-						<br><span id="reward">0</span>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br></h3>
+					<h3>Your WGD balance is</h3>
+					<br>
+					<h1><span id="reward"></span></h1>
 					<br>
 					<br>
 					<div class="col-sm-12 text no-pd">
-						<p class="text-center">Tokens will be released to your Ethereum ERC20 wallet 31 July, when token sale event starts.
-							<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
+						<p class="text-center">Tokens will be released to your ETH address
+							<br><b id="user_address"></b>
+							<br>on 31 July, when Token Sale starts.
+							<br><br>Want more WGD? <a href="https://wr.io/registration/">Token Sale registration</a> now open!
+							<br><br>Have questions? Contact us on webRunes <a href="https://t.me/webRunesGroup" target="_blank">Telegram group</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></p>
 						<br>
 					</div>
 				</div>
@@ -422,7 +422,6 @@
 
 		var idmm = 'login-metamask';
 
-
 		var load_script = (url, cb) => {
 			var
 				script = document.createElement('script'),
@@ -460,11 +459,6 @@
 			document.getElementById("affiliates").style.display = "none";
 			document.getElementById("wrio").style.display = "none";
 			document.getElementById("logout").style.display = "block";
-		}
-
-		function check_balance(){
-			logged();
-			document.getElementById("balance").style.display = "block";
 		}
 
 		function dashboard(){
@@ -511,7 +505,6 @@
                     load_script('https://cd1st.identitymind.com/idm.min.js', () => {
 
 										});
-
 										/*remove fields
 										document.getElementsByName('phone_code').value = 'Canada'
 										document.getElementById('phone').value = '613-555-0199';*/
@@ -526,33 +519,45 @@
 			function result_show(){
 				var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/od6/public/values?alt=json";
 				address = document.getElementById("eth_address").value;
+				var completed = false;
 				var record = false;
 				$.getJSON(url, function(data) {
 				 var entry = data.feed.entry;
 				 $(entry).each(function(){
-					 if (this.gsx$status.$t == 'Completed'){
-						 check_balance();
-					 } else if (this.gsx$ethaddress.$t == address){
-		 				 dashboard();
-						 record = true;
-						 wgd_reserved_amount = this.gsx$wgd.$t;
-						 $('#reserved_amount').prepend(''+this.gsx$wgd.$t+' for '+parseInt(wgd_reserved_amount)/25+' ETH');
-						 step2();
-						 document.getElementById('step2_btn').click();
-						 step3();
 
-						 if (this.gsx$kyc.$t == 'ACCEPT'){
-							 document.getElementById("kyc").style.display = "none";
-							 document.getElementById("kyc_completed").style.display = "block";
-							 document.getElementById('step3_btn').click();
+					 if (this.gsx$ethaddress.$t == address){
 
+						 if (this.gsx$status.$t == 'Completed'){
+							 completed = true;
+							 logged();
+				 			 document.getElementById('balance_dashboard').style.display = 'block';
+				 			 document.getElementById('content').style.opacity = '100';
+							 $('#reward').prepend(''+this.gsx$wgd.$t);
+							 $('#user_address').prepend(''+address);
 						 } else {
-							 document.getElementById("kyc").style.display = "none";
-							 document.getElementById("kyc_manual_review").style.display = "block";
-						 }
-					 }
+								 record = true;
+						 	 	 dashboard();
+								 wgd_reserved_amount = this.gsx$wgd.$t;
+								 $('#reserved_amount').prepend(''+this.gsx$wgd.$t+' for '+parseInt(wgd_reserved_amount)/25+' ETH');
+								 step2();
+								 document.getElementById('step2_btn').click();
+								 step3();
+
+								 if (this.gsx$kyc.$t == 'ACCEPT'){
+									 document.getElementById("kyc").style.display = "none";
+									 document.getElementById("kyc_completed").style.display = "block";
+									 document.getElementById('step3_btn').click();
+
+								 } else {
+									 document.getElementById("kyc").style.display = "none";
+									 document.getElementById("kyc_manual_review").style.display = "block";
+								 }
+						 	}
+				 	}
+
 				 });
-				 if (record == false){
+				 if (completed == false && record == false){
+						dashboard();
 						//document.getElementById('gform-btn').click();
 						document.getElementById("gform-btn").style.display = "block";
 				 }
@@ -606,9 +611,6 @@
                 web3.eth.getBalance(address, function (error, wei) {
                     if (!error) {
 											result_show();
-											//document.getElementById('part').style.display = 'none';
-											//document.getElementById('content').style.display = 'block';
-											//document.getElementById('content').style.opacity = '0';
                     }
                 });
             } catch (err) {
