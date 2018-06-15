@@ -19,7 +19,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<style>
 	html,body{overflow:inherit!important}
-	#content{opacity:0;transition:all 2000ms}
+	#content{opacity:0}
 	#reward{font-size:140px;color:#7a0fff;text-align:center}
 	#error{opacity:0;transition:opacity 1000ms;position:relative;top:-12px}
 	#tokeswidth,#tokeswidth2{transition:all 0.5s ease-out;width:100%}
@@ -65,6 +65,7 @@
 				 <input id="form_lastname" type="text" name="LastName" hidden>
 				 <input id="form_kyc" type="text" name="KYC" hidden>
 				 <input id="form_affiliate" type="text" name="Affiliates" hidden>
+				 <input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
 			</form>
 		    <!-- change the form action to your script url -->
 			<div id="login_form" class="container align-items-center">
@@ -186,6 +187,8 @@
 					<h1><span id="reward"></span></h1>
 					<br>
 					<br>
+					<p class="text-center">Your <a href="#" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>
+					<br>
 					<div class="col-sm-12 text no-pd">
 						<p class="text-center">Tokens will be released to your ETH address
 							<br><b id="user_address"></b>
@@ -256,7 +259,7 @@
 							WGD tokens will be freely transferable and tradeable on <a href="https://bancor.network" target="_blank">Bancor</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></p>
 							<form id="step2_form">
 								<p><label for="resident"><input type="checkbox" name="resident" id="resident" required>&nbsp;I hereby confirm that I am not a resident nor a citizen of the United States of America or other country, whose legislation does not allow to buy or operate WGD tokens</label></p>
-								<p><label for="agreement"><input type="checkbox" name="agreement" id="agreement" required>&nbsp;I accept the <a href="https://wr.io/TokenPurchaseAgreement.pdf" target="_blank">Token Sale Agreement</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup> and understand, что получу токены 31 July с началом Token Sale</label></p>
+								<p><label for="agreement"><input type="checkbox" name="agreement" id="agreement" required>&nbsp;I accept the <a href="https://wr.io/TokenPurchaseAgreement.pdf" target="_blank">Token Sale Agreement</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup> and understand, that tokens will be released to my ETH address on 31 July, when Token Sale starts.</label></p>
 								<br>
 								<input id="next-btn" class="btn" type="submit" name="SubmitButton" value="Next">
 							</form>
@@ -277,7 +280,7 @@
 					<div id="kyc">
 						<p>Have problems? <a href="mailto:info@webrunes.com?Subject=Manual%20Processing&Body=Hello%20webRunes%2C%0Aplease%20contact%20me%20for%20the%20manual%20processing.%0A%0AThank%20you." target="_blank">Contact us</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup> for the manual processing.</p>
 						<div id="idm-container"></div>
-						<input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
+						<br>
 						<div class="idm"></div>
 					</div>
 					<div id="kyc_manual_review">
@@ -303,7 +306,7 @@
 				<div class="col-sm-10">
 					<h4>Step 4 &middot; Payment</h4>
 					<div id="step4_body">
-						<p id="buyout_notification"></p>
+						<h5 id="buyout_notification"></h5>
 				  	<div id="pay-button"></div>
 						<a id="step4_btn" href="#step5_anchor" class="btn" onClick="step5();" hidden>Next</a>
 					</div>
@@ -532,6 +535,7 @@
 							 logged();
 				 			 document.getElementById('balance_dashboard').style.display = 'block';
 				 			 document.getElementById('content').style.opacity = '100';
+				 			document.getElementById('content').style.transition = 'opacity 2000ms';
 							 $('#reward').prepend(''+this.gsx$wgd.$t);
 							 $('#user_address').prepend(''+address);
 						 } else {

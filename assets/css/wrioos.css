@@ -30,7 +30,7 @@ p.date{color:#97a5bf}
 #first_name,#last_name,#middle_name,#first_name_hidden,#last_name_hidden,#middle_name_hidden{text-transform:uppercase}
 /*.idm-container input[type=text],.idm-container input[type=email],.idm-container textarea{padding:0!important}*/
 .idm-container hr{display:none}
-#phone{margin-left:12px}
+#phone{margin:12px!important}
 #phone-container select{min-width:200px}
 #idm-form-doc h3{font-size:1.4em;margin:30px 0 0}
 #next,#form-submit{background-color:#3561eb;width:auto;font-family:"Poppins",sans-serif;font-size:12px;line-height:46px;font-weight:600;padding:0 34px;text-align:center;text-transform:uppercase;color:#fff;min-width:160px;max-width:100%;border:none;box-sizing:border-box;transition:all 0.5s;position:relative;z-index:2}
@@ -131,7 +131,7 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
   .play-btn > span:last-of-type{color:#fff}
   .main_bg{background:url(../../images/1_mobile.png) bottom right no-repeat}
   .dashboard h4{margin-top:20px;display:block}
-  .dashboard .btn{display:block;font-size:12px;min-width:160px;max-width:200px;line-height:46px;padding:0 34px;margin:auto}
+  .dashboard .btn{display:block;font-size:12px;min-width:160px;max-width:200px;line-height:46px;padding:0 34px}
   .idm-row h4{text-align:left}
   #phone{margin:0}
 }
