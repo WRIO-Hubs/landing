@@ -28,6 +28,8 @@ p.date{color:#97a5bf}
 #recaptcha_error_message{display:block}
 #first_name,#last_name,#middle_name{clear:both}
 #first_name,#last_name,#middle_name,#first_name_hidden,#last_name_hidden,#middle_name_hidden{text-transform:uppercase}
+.idm-container input[type="checkbox"]+label:after{display:none}
+.idm-container small{color:#3c3c3c!important;font-family:"Poppins",sans-serif;font-size:15px;line-height:1.86}
 /*.idm-container input[type=text],.idm-container input[type=email],.idm-container textarea{padding:0!important}*/
 .idm-container hr{display:none}
 #phone{margin:12px!important}
@@ -127,6 +129,7 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
 @media (max-width: 768px) {
   #crowdsale .text-right{text-align:left!important}
   #crowdsale .text-left{text-align:right!important}
+  #eth_address{max-width:360px}
   .mobile{text-align:center}
   .play-btn > span:last-of-type{color:#fff}
   .main_bg{background:url(../../images/1_mobile.png) bottom right no-repeat}

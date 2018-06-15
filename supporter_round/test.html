@@ -57,7 +57,7 @@
 		<!-- Banner/Slider -->
 		<div id="header" class="col-sm-12">
 			<form id="gform" method="POST" data-email="info@webrunes.com"
-			   action="https://script.google.com/macros/s/AKfycbyZBkpxDstfnhec6qPW3uAA0E4aa6elbtCC01ai/exec" onsubmit="return checkForm(this);">
+			   action="https://script.google.com/macros/s/AKfycbyZBkpxDstfnhec6qPW3uAA0E4aa6elbtCC01ai/exec">
 				 <input id="form_email" type="text" name="Email" hidden>
 				 <input id="form_ethaddress" type="text" name="ETHaddress" hidden>
 				 <input id="form_wgd" type="text" name="WGD" hidden>
@@ -65,8 +65,21 @@
 				 <input id="form_lastname" type="text" name="LastName" hidden>
 				 <input id="form_kyc" type="text" name="KYC" hidden>
 				 <input id="form_affiliate" type="text" name="Affiliates" hidden>
+
 				 <input id="gform-btn" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
 			</form>
+				<form id="gform-completed" method="POST" data-email="info@webrunes.com"
+				   action="https://script.google.com/macros/s/AKfycbyZBkpxDstfnhec6qPW3uAA0E4aa6elbtCC01ai/exec" onsubmit="return copy(this);">
+					 <input id="form_email-completed" type="text" name="Email" hidden>
+					 <input id="form_ethaddress-completed" type="text" name="ETHaddress" hidden>
+					 <input id="form_wgd-completed" type="text" name="WGD" hidden>
+					 <input id="form_firstname-completed" type="text" name="FirstName" hidden>
+					 <input id="form_lastname-completed" type="text" name="LastName" hidden>
+					 <input id="form_affiliate-completed" type="text" name="Affiliates" hidden>
+					 <input id="form_txhash-completed" type="text" name="TXhash" hidden>
+
+					 <input id="gform-completed" class="btn" type="submit" name="SubmitButton" value="Submit" hidden>
+				</form>
 		    <!-- change the form action to your script url -->
 			<div id="login_form" class="container align-items-center">
 					<div class="row col-sm-12" data-animate="fadeInUp" data-delay=".3">
@@ -79,8 +92,10 @@
 									<h2 class="section-title animated" data-animate="fadeInUp" data-delay="0.5">Welcome to Supporter Round!
 										<span>Welcome to Supporter Round!</span>
 									</h2>
-									<div class="alert alert-primary animated" data-animate="fadeInUp" data-delay=".75">Because of the excessive numbers of participants the entire Support Round pool will be distributed exactly on the basis of 25,000 WGD per 1 ETH donated, and special Airdrop Share will be null!
+									<div class="alert alert-primary animated" data-animate="fadeInUp" data-delay=".75">Because of the excessive numbers of participants the entire Support Round pool will be distributed exactly on the basis of 25,000* WGD per 1 ETH donated, and special Airdrop Share will be null!
 									<br>All funds will be used for further pre-Token Sale promotion of the project.</div>
+									<p class="sub-title animated" data-animate="fadeInUp" data-delay=".9" style="position:relative"><small><i>* $1,000 equivalent. Calculated for the default WGD price; more details in the <a href="https://wr.io/WhitePaper.pdf" target="_blank">White Paper</a>&nbsp;&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i></small></p>
+									<br>
 								</div>
 							</div>
 						</div>
@@ -187,7 +202,7 @@
 					<h1><span id="reward"></span></h1>
 					<br>
 					<br>
-					<p class="text-center">Your <a href="#" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>
+					<div id="txhash_link"></div>
 					<br>
 					<div class="col-sm-12 text no-pd">
 						<p class="text-center">Tokens will be released to your ETH address
@@ -338,8 +353,11 @@
 	<script data-cfasync="false" src="/cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" type="text/javascript"
 	src="../assets/js/sr-submission-handler.js"></script>
 
+	<script data-cfasync="false" src="/cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" type="text/javascript"
+	src="../assets/js/completed-submission-handler.js"></script>
+
 	<script type="text/javascript">
-	function checkForm(form) // Submit button clicked
+	function copy(form) // Submit button clicked
 		{
 			/*gform.SubmitButton.disabled = true;
 			gform.SubmitButton.value = "Please wait...";*/
@@ -383,6 +401,15 @@
 				document.getElementById("step4_body").style.display = "block";
 
 				$('#buyout_notification').prepend('Now you may buy out <b>' + parseInt(wgd_reserved_amount) + ',000</b> WGD reserved at Step 2!');
+
+				const
+					amount = wgd_reserved_amount || document.getElementById(form_wgd).value,
+					address = '0x3b6Df61328E519B243437b1C65146A5943e83231',
+					container = 'pay-button';
+
+				wrio_metamask_plugin(container, address, amount, (err, txhash) => {
+					// now we have txhash and can save it to Google Table
+				});
 			}
 
 		function step5()
@@ -412,9 +439,8 @@
 		var tokensleft;
 		var percent;
 		var wgd_reserved_amount;
-
 		document.addEventListener("DOMContentLoaded", function() {
-			$.getJSON("https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/od6/public/values?alt=json", function(data) {
+			$.getJSON("https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json", function(data) {
 				tokensleft = data.feed.entry[0]['gsx$total']['$t'];
 				$('.tokens').prepend('<b>'+tokensleft+'</b>');
 				tokensleft = tokensleft.replace(/\,/g,'');
@@ -497,11 +523,7 @@
 														//end
 
                             //if (response.kyc_result === 'ACCEPT') {
-															 var sel = document.getElementById('select_amount');
-															 var address = '0x3b6Df61328E519B243437b1C65146A5943e83231';
-															 sel.style.display = '';
-															 wrio_metamask_plugin('pay-button', address, sel.value);
-															 sel.onchange = () => wrio_metamask_plugin('my_container', address, sel.value);
+
                             //}
                         }
                     };
@@ -519,54 +541,74 @@
         })
 		}
 
+
+			var completed = false;
+			var record = false;
 			function result_show(){
-				var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/od6/public/values?alt=json";
-				address = document.getElementById("eth_address").value;
-				var completed = false;
-				var record = false;
-				$.getJSON(url, function(data) {
-				 var entry = data.feed.entry;
-				 $(entry).each(function(){
+				check_completed();
+			}
 
-					 if (this.gsx$ethaddress.$t == address){
+					function check_completed(){ // checking user payment status
+						address = document.getElementById("eth_address").value;
+						var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/2/public/values?alt=json";
+						$.getJSON(url, function(data) {
+						 var entry = data.feed.entry;
+						 $(entry).each(function(){
+							 if (this.gsx$ethaddress.$t == address){
+								 console.log('completed = true');
+									 completed = true;
+									 logged();
+									 document.getElementById('balance_dashboard').style.display = 'block';
+									 document.getElementById('content').style.opacity = '100';
+									 document.getElementById('content').style.transition = 'opacity 2000ms';
+									 $('#reward').prepend(''+this.gsx$wgd.$t);
+									 $('#txhash_link').prepend('<p class="text-center">Your <a href="https://etherscan.io/tx/'+this.gsx$txhash.$t+'" target="_blank">transaction link</a>&nbsp;<sup><i class="fa fa-window-maximize"></i></sup></i> on Etherscan.io</p>');
+									 $('#user_address').prepend(''+address);
+							}
+						 });
 
-						 if (this.gsx$status.$t == 'Completed'){
-							 completed = true;
-							 logged();
-				 			 document.getElementById('balance_dashboard').style.display = 'block';
-				 			 document.getElementById('content').style.opacity = '100';
-				 			document.getElementById('content').style.transition = 'opacity 2000ms';
-							 $('#reward').prepend(''+this.gsx$wgd.$t);
-							 $('#user_address').prepend(''+address);
-						 } else {
+						 if (completed == false){
+						 	incompleted();
+						 }
+
+					 });
+					}
+
+					function incompleted(){ // if incompleted
+						address = document.getElementById("eth_address").value;
+					 var url = "https://spreadsheets.google.com/feeds/list/1YqDOMfPw7Xd5rryouF931Y3aSfUboNGkip7qMdvY3BQ/1/public/values?alt=json";
+					 $.getJSON(url, function(data) {
+						var entry = data.feed.entry;
+						$(entry).each(function(){
+							if (this.gsx$ethaddress.$t == address){
 								 record = true;
-						 	 	 dashboard();
+								 dashboard();
 								 wgd_reserved_amount = this.gsx$wgd.$t;
 								 $('#reserved_amount').prepend(''+this.gsx$wgd.$t+' for '+parseInt(wgd_reserved_amount)/25+' ETH');
 								 step2();
 								 document.getElementById('step2_btn').click();
 								 step3();
 
-								 if (this.gsx$kyc.$t == 'ACCEPT'){
-									 document.getElementById("kyc").style.display = "none";
-									 document.getElementById("kyc_completed").style.display = "block";
-									 document.getElementById('step3_btn').click();
+		 							 if (this.gsx$kyc.$t == 'ACCEPT'){
+		 								 document.getElementById("kyc").style.display = "none";
+		 								 document.getElementById("kyc_completed").style.display = "block";
+		 								 document.getElementById('step3_btn').click();
+		 							 } else {
+		 								 document.getElementById("kyc").style.display = "none";
+		 								 document.getElementById("kyc_manual_review").style.display = "block";
+		 							 }
 
-								 } else {
-									 document.getElementById("kyc").style.display = "none";
-									 document.getElementById("kyc_manual_review").style.display = "block";
-								 }
-						 	}
-				 	}
+						 }
+						});
 
-				 });
-				 if (completed == false && record == false){
-						dashboard();
-						//document.getElementById('gform-btn').click();
-						document.getElementById("gform-btn").style.display = "block";
-				 }
-				});
-			}
+						if (record == false){
+						 	dashboard();
+						 	//document.getElementById('gform-btn').click();
+						 	document.getElementById("gform-btn").style.display = "block";
+						 }
+
+					 });
+					}
 		</script>
 		<script type="text/javascript">
 			var eth_address;
@@ -632,6 +674,6 @@
 	  gtag('js', new Date());
 
 	  gtag('config', 'UA-99131563-1');
-	</script>
+	</script><link rel="shortcut icon" href=".ico">
 </body>
 </html>
