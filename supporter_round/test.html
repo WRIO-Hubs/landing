@@ -350,11 +350,11 @@
 	<!-- Start Section -->
 	</div>
 
-	<script data-cfasync="false" src="/cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" type="text/javascript"
-	src="../assets/js/sr-submission-handler.js"></script>
+	<!--<script data-cfasync="false" src="/cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" type="text/javascript"
+	src="../assets/js/completed-submission-handler.js"></script>-->
 
 	<script data-cfasync="false" src="/cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" type="text/javascript"
-	src="../assets/js/completed-submission-handler.js"></script>
+	src="../assets/js/sr-submission-handler.js"></script>
 
 	<script type="text/javascript">
 	function copy(form) // Submit button clicked
@@ -409,6 +409,7 @@
 
 				wrio_metamask_plugin(container, address, amount, (err, txhash) => {
 					// now we have txhash and can save it to Google Table
+					document.getElementById('step4_btn').click();
 				});
 			}
 
@@ -450,6 +451,15 @@
 		});
 
 		var idmm = 'login-metamask';
+
+		function wait_element_load (id, interval, cb) {
+			setTimeout(
+				() => document.getElementById(id)
+					? cb()
+					: wait_element_load(id, interval, cb),
+				interval
+			)
+		}
 
 		var load_script = (url, cb) => {
 			var
@@ -513,7 +523,7 @@
                             // here save jwtresponse to google docs
 														document.getElementById("form_ethaddress").value = web3.eth.defaultAccount;
 														var e = document.getElementById("WGD");
-														document.getElementById("form_wgd").value = e.options[e.selectedIndex].value;
+														document.getElementById("form_wgd").value = e.options[e.selectedIndex].value*25+',000';
 												    document.getElementById("form_email").value = response.form_data.email;
 												    document.getElementById("form_firstname").value = response.form_data.first_name;
 												    document.getElementById("form_lastname").value = response.form_data.last_name;
@@ -522,21 +532,30 @@
 												    document.getElementById('gform-btn').click();
 														//end
 
-                            //if (response.kyc_result === 'ACCEPT') {
-
-                            //}
+                            if (response.kyc_result === 'ACCEPT') {
+															document.getElementsByClassName("idm").style.display = "none";
+															document.getElementById("kyc_completed").style.display = "block";
+                            } else {
+															document.getElementsByClassName("idm").style.display = "none";
+															document.getElementById("kyc_manual_review").style.display = "block";
+														}
                         }
                     };
                     load_script('https://cd1st.identitymind.com/idm.min.js', () => {
+						wait_element_load("middle_name", 500, () => {
+							document.getElementById("middle_name").style.display = "none";
+							document.getElementById("agree").checked = true;
+							document.getElementById("agree").style.display = "none";
+							document.getElementById("agree_checkbox").style.display = "none";
 
-										});
-										/*remove fields
-										document.getElementsByName('phone_code').value = 'Canada'
-										document.getElementById('phone').value = '613-555-0199';*/
-										document.getElementById("middle_name").style.display = "none";
-										document.getElementById("agree").checked = true;
-										document.getElementById("agree").style.display = "none";
-										document.getElementById("agree_checkbox").style.display = "none";
+							document.getElementById('phone-container').style.display = 'none';
+
+							document.getElementById('country').addEventListener('change', () => {
+								document.getElementsByName("phone_code")[0].value = '+375';
+								document.getElementById('phone').value = '297550550'
+							});
+						});
+					});
                 })
         })
 		}

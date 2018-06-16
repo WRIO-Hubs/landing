@@ -29,7 +29,7 @@ p.date{color:#97a5bf}
 #first_name,#last_name,#middle_name{clear:both}
 #first_name,#last_name,#middle_name,#first_name_hidden,#last_name_hidden,#middle_name_hidden{text-transform:uppercase}
 .idm-container input[type="checkbox"]+label:after{display:none}
-.idm-container small{color:#3c3c3c!important;font-family:"Poppins",sans-serif;font-size:15px;line-height:1.86}
+.idm-container small{color:#eee!important;font-family:"Poppins",sans-serif;font-size:15px;line-height:1.86}
 /*.idm-container input[type=text],.idm-container input[type=email],.idm-container textarea{padding:0!important}*/
 .idm-container hr{display:none}
 #phone{margin:12px!important}
