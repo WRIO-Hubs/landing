@@ -12,7 +12,7 @@ const
         error: 'Transaction error. Please try again',
         done: 'The transaction link on etherscan.io',
         choose: 'Please choose the Main Ethereum Network',
-        login: 'Login with MetaMask'
+        login: 'Log in to Metamask to go on with authorization'
     },
     extentionLinks = {
         opera: 'https://addons.opera.com/en/extensions/details/metamask/',
@@ -54,7 +54,7 @@ const
         container.innerHTML = '';
         container.appendChild(a);
     },
-    create_pay_button = id => {
+    create_pay_button = (id, cb) => {
         const
             container = document.getElementById(id),
             img = document.createElement('img'),
@@ -96,6 +96,8 @@ const
                         el.appendChild(t);
                     }
                     document.getElementById(state.id).appendChild(el);
+
+                    cb(err, tx)
                 }
             )
         }
@@ -109,19 +111,20 @@ const
             container = document.getElementById(id),
             div = document.createElement('div');
 
-        div.className = 'choose';
+        div.className = 'alert alert-warning choose';
         div.appendChild(document.createTextNode(text.choose));
         container.innerHTML = '';
+        container.innerHTML = '<h2>Login with Metamask</h2><img src="../assets/images/login_tooltip.png" /><br><br>';
         container.appendChild(div);
     },
     create_message_login = id => {
         const
-            container = document.getElementById(id),
-            div = document.createElement('div');
+          container = document.getElementById(id),
+          div = document.createElement('div');
 
-        div.className = 'login';
+        div.className = 'alert alert-warning login';
         div.appendChild(document.createTextNode(text.login));
-        container.innerHTML = '';
+        container.innerHTML = '<h2>Login with Metamask</h2><img src="../assets/images/login_tooltip.png" /><br><br>';
         container.appendChild(div);
     },
     installed = (id, cb) =>
@@ -142,24 +145,24 @@ const
         is_metamask_login()
             ? cb()
             : setTimeout(() => metamask_login_done(id, cb), check_login_interval) && create_message_login(id),
-    once = id =>
+    once = (id, cb) =>
         installed(id, () =>
             connected(id, () =>
                 main_net_selected(id, () =>
                     metamask_login_done(id, () =>
-                        create_pay_button()
+                        create_pay_button(id, cb)
                     )
                 )
             )
         ),
-    start = (id, address, money) => {
+    start = (id, address, money, cb) => {
         state.id = id;
         state.address = address;
         state.money = money;
 
         if (!state.started) {
             state.started = true;
-            once(id);
+            once(id, cb);
         }
     };
 

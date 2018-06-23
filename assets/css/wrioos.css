@@ -10,7 +10,7 @@ p.date{color:#97a5bf}
 .single-roadmap h6{position:relative;top:-2px;font-size:1rem}
 .single-roadmap.roadmap-done h6{position:relative;top:-4px}
 .single-roadmap.roadmap-done.roadmap-down h6{position:relative;top:0}
-#eth_address{max-width:385px;background-color:#eee;display:none;margin:0 auto}
+#eth_address{max-width:375px;background-color:#eee;margin:0 auto;text-align:center}
 #login-metamask a img{max-width:380px}
 .steps{margin:50px 0}
 .steps h4{margin:0 0 30px}
@@ -120,6 +120,7 @@ textarea{width:100%}
 .accordion .card .card-header a{padding:15px 45px 15px 30px}
 .ico-listing{margin-top:50px}
   .ico-listing img{height:40px}
+  .ico-listing li{display:inline-block;margin:20px}
 .bottom_links{display:-webkit-inline-box;margin-top:48px}
 input[type=radio]{margin-right:4px;position:relative;top:2px}
 .disc li,.alpha li{list-style-position:inside!important;padding:8px 0}

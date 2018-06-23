@@ -55,7 +55,12 @@ function getFormData() {
 
   // add form-specific values into the data
   data.formDataNameOrder = JSON.stringify(fields);
-  data.formGoogleSheetName = "responses"; // default sheet name
+  if (record == true) {
+    data.formGoogleSheetName = "completed"; // default sheet name
+  } else {
+    data.formGoogleSheetName = "responses"; // default sheet name
+    console.log("responses");
+  }
   data.formGoogleSendEmail = form.dataset.email || ""; // no email by default
 
   console.log(data);
