@@ -51,7 +51,7 @@ const
         a.target = '_blank';
         a.href = extentionLinks[browser] || extentionLinks.default;
         a.appendChild(img);
-        container.innerHTML = '';
+        container.innerHTML = '<h2>You need the MetaMask plugin to login</h2>';
         container.appendChild(a);
     },
     create_pay_button = (id, cb) => {
