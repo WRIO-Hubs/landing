@@ -3,8 +3,6 @@
 p span{color:#c08dff}
 p.date{color:#97a5bf}
 .grey{color:#eee;display:block}
-.main_bg{background:url(../../images/1.png) bottom right no-repeat}
-.countdown-box{background:rgba(0,0,0,.85);margin-top:60px}
 .progress.big{height:3rem;font-size:1rem}
 .single-roadmap.roadmap-done:after{color:#46bdf4;content:'\f058';font-size:20px;left:1px;border:none;width:22px;height:22px;line-height:20px}
 .single-roadmap h6{position:relative;top:-2px;font-size:1rem}
@@ -28,7 +26,6 @@ p.date{color:#97a5bf}
 #recaptcha_error_message{display:block}
 #first_name,#last_name,#middle_name{clear:both}
 .idm-container input[type="checkbox"]+label:after{display:none}
-.idm-container small{color:#eee!important;font-family:"Poppins",sans-serif;font-size:15px;line-height:1.86}
 /*.idm-container input[type=text],.idm-container input[type=email],.idm-container textarea{padding:0!important}*/
 .idm-container hr{display:none}
 #phone{margin:12px!important}
@@ -84,6 +81,7 @@ h6 span{color:#97a5bf;font-weight:normal}
 .header-txt h1{margin-top:80px}
 h2.lead{font-size:1.5rem!important;font-weight:bold}
 p.lead{padding:0 0 30px}
+p.quote{padding:0}
 h5.blog-title{font-size:1.25em;text-transform:uppercase}
 .single-chart .sub-heading{padding-bottom:40px}
 .why .blog-texts{padding:20px 0 40px}
@@ -117,14 +115,26 @@ textarea{width:100%}
 .jun_hao{background:url('https://webrunes.com/team/img/jun_hao.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .tab-custom .tab-content p a{padding:0}
 .accordion .card .card-header a{padding:15px 45px 15px 30px}
+p.tokensale-text{margin:0;padding:0}
 .ico-listing{margin-top:50px}
   .ico-listing img{height:40px}
   .ico-listing li{display:inline-block;margin:20px}
+.partners-listing{margin-top:20px}
+  .partners-listing img{height:40px}
+  .partners-listing li{display:inline-block;margin:20px}
 .bottom_links{display:-webkit-inline-box;margin-top:48px}
 input[type=radio]{margin-right:4px;position:relative;top:2px}
 .disc li,.alpha li{list-style-position:inside!important;padding:8px 0}
   .disc li{list-style:disc}
   .alpha li{list-style:lower-alpha}
+.social{margin-top:60px}
+
+@media (max-width: 978px) {
+  p.tokensale-text-padding{padding-top:60px}
+  .social{margin-top:30px}
+  .site-header .navbar.is-transparent{background:#020207;position:fixed}
+  .header-txt p.lead{font-size:1.27em}
+}
 
 @media (max-width: 768px) {
   #crowdsale .text-right{text-align:left!important}
@@ -132,9 +142,11 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
   #eth_address{max-width:360px}
   .mobile{text-align:center}
   .play-btn > span:last-of-type{color:#fff}
-  .main_bg{background:url(../../images/1_mobile.png) bottom right no-repeat}
   .dashboard h4{margin-top:20px;display:block}
   .dashboard .btn{display:block;font-size:12px;min-width:160px;max-width:200px;line-height:46px;padding:0 34px}
   .idm-row h4{text-align:left}
   #phone{margin:0}
+}
+
+@media only screen and (max-width: 480px) {
 }
