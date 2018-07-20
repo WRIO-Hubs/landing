@@ -112,6 +112,7 @@ textarea{width:100%}
 .vitaly_hatalski{background:url('https://webrunes.com/team/img/vitaly_hatalski.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .leonard_tan{background:url('https://webrunes.com/team/img/leonard_tan.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .igor_anshakov{background:url('https://webrunes.com/team/img/igor_anshakov.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.maxim_bozhko{background:url('https://webrunes.com/team/img/maxim_bozhko.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .jun_hao{background:url('https://webrunes.com/team/img/jun_hao.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .tab-custom .tab-content p a{padding:0}
 .accordion .card .card-header a{padding:15px 45px 15px 30px}
@@ -119,8 +120,8 @@ p.tokensale-text{margin:0;padding:0}
 .ico-listing{margin-top:50px}
   .ico-listing img{height:40px}
   .ico-listing li{display:inline-block;margin:20px}
-.partners-listing{margin-top:20px}
-  .partners-listing img{height:40px}
+.partners-listing{}
+  .partners-listing img{height:42px;border-radius:0}
   .partners-listing li{display:inline-block;margin:20px}
 .bottom_links{display:-webkit-inline-box;margin-top:48px}
 input[type=radio]{margin-right:4px;position:relative;top:2px}
@@ -128,12 +129,19 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
   .disc li{list-style:disc}
   .alpha li{list-style:lower-alpha}
 .social{margin-top:60px}
+.acronym-text{color:#888}
+.countdown-box .token-countdown{padding-bottom:55px}
 
-@media (max-width: 978px) {
+@media (max-width: 996px) {
   p.tokensale-text-padding{padding-top:60px}
   .social{margin-top:30px}
   .site-header .navbar.is-transparent{background:#020207;position:fixed}
   .header-txt p.lead{font-size:1.27em}
+  .countdown-box{margin-bottom:30px}
+}
+
+@media (max-width: 1200px) {
+  .social{margin-top:46px}
 }
 
 @media (max-width: 768px) {
