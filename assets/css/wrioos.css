@@ -6,6 +6,7 @@ p.date{color:#97a5bf}
   .alert-top a{color:#6cd1ff}
     .alert-top a:hover{color:#46bdf4}
 .grey{color:#eee;display:block}
+.blue{color:#a2b4d2}
 .progress.big{height:3rem;font-size:1rem}
 .single-roadmap.roadmap-done:after{color:#46bdf4;content:'\f058';font-size:20px;left:1px;border:none;width:22px;height:22px;line-height:20px}
 .single-roadmap h6{position:relative;top:-2px;font-size:1rem}
@@ -141,7 +142,7 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
 /* ICO stages slider */
 .slider-pane-item img{max-width:760px;margin:auto;}
 @media only screen and (max-width: 575px) { .reason-item { padding: 0; } }
-.process-scetion .slider-nav {/*background: url(../images/roadmap_line.png) center repeat-x;*/text-align:center;}
+.process-scetion .slider-nav {/*background: url(../images/roadmap_line.png) center repeat-x;*/margin-bottom:30px;text-align:center;}
 .process-scetion .slider-nav-item {display: inline-block; padding-top:36px;text-transform: uppercase;font-weight: bold; height: 100px; width: 100px; flex-grow: 0; flex-shrink: 0; border-radius: 50%; text-align: center; background: #3660ec; cursor: pointer; color: #fff; box-shadow: 0 5px 25px rgba(93, 70, 232, 0.15); transition: all .4s ease; margin: 20px 20px; }
 .visibility-hidden{visibility:hidden}
 /*.process-scetion .slider-nav-item:nth-child(2) { color: #40beff; }
