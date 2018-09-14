@@ -1,8 +1,16 @@
 .myRef{display:none}
 .max-width{max-width:800px;margin:40px auto 0}
+.carousel div{background:#fff;
+  box-shadow:0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  border-radius:10px;width:10px;height:10px;display:inline-block;margin:10px 10px}
+  .carousel div:hover{cursor:pointer}
+  .carousel div.active{background:#3660ec;width:20px;height:20px;margin:5px 5px;transition:all 0.3s}
+.benefits_list{margin:0 auto;max-width:300px;text-align:left}
+  .benefits_list li{margin:10px 0}
+  .benefits_list i{width:35px}
 p span{color:#c08dff}
 p.date{color:#97a5bf}
-.alert-top{background-color:#7a0fff}
+.alert-top{background-color:#7a0fff;margin-bottom:40px}
   .alert-top a{color:#6cd1ff}
     .alert-top a:hover{color:#46bdf4}
 .grey{color:#eee;display:block}
@@ -55,6 +63,7 @@ p.date{color:#97a5bf}
 .dashboard .idm-container input,.dashboard .idm-container select option,.dashboard .idm-container select{padding:0 12px!important;line-height:2.6em;margin: 12px 0}
 .dashboard .idm-container h4{color:#fff}
 .dashboard .btn{max-width:200px}
+.section-bg-btoa2{background-color:#0e102a}
 /*
 .position{}
   .position a{display:block;position:relative;z-index:1}
@@ -65,6 +74,7 @@ p.date{color:#97a5bf}
 .badge{color:#3561eb;margin-left:2px;padding:.6em .8em}
 .banner.banner-curb.banner-particle {
     background: url(../images/header-bottom.png) bottom center no-repeat;background-size:100%,auto,auto,auto}
+.banner-content .owl-carousel .owl-item img{width:auto} /* need it to override default slider css */
 .btn.btn-outline:after{background-color:#121536}
 .btn,.btn:before,.navbar .navbar-nav > li > a.nav-link.btn:before,.navbar .navbar-nav > li > a.nav-link.btn:after{border-radius:5px}
 .navbar .navbar-nav > li > a.nav-link.active{color:#a862ff}
@@ -107,6 +117,7 @@ textarea{width:100%}
 .vladimir_spirin{background:url('https://webrunes.com/team/img/vladimir_spirin.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .umair_adeeb_shahid{background:url('https://webrunes.com/team/img/umair_adeeb_shahid.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .alwaleed_alshehail{background:url('https://webrunes.com/team/img/alwaleed_alshehail.jpg') center center no-repeat;min-width:200px;min-height:200px}
+.eric_egnet{background:url('https://webrunes.com/team/img/eric_egnet.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .james_scholz{background:url('https://webrunes.com/team/img/james_scholz.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .jillian_zavitz{background:url('https://webrunes.com/team/img/jillian_zavitz.jpg') center center no-repeat;min-width:200px;min-height:200px}
 .benjami_anderson{background:url('https://webrunes.com/team/img/benjami_anderson.jpg') center center no-repeat;min-width:200px;min-height:200px}
@@ -188,13 +199,17 @@ input[type=radio]{margin-right:4px;position:relative;top:2px}
 .active .animate-down, .active .animate-up { opacity: 1; }
 .active .animate-down { top: 0; }
 .active .animate-up { bottom: 0; }
-
+@media only screen and (max-width: 991px) and (min-width: 768px){
+  .event-info{width:auto}
+}
 @media (max-width: 996px) {
-  p.tokensale-text-padding{padding-top:60px}
+  p.tokensale-text-padding{padding-top:20px}
   .social{margin-top:30px}
   .site-header .navbar.is-transparent{background:#020207;position:fixed}
   .header-txt p.lead{font-size:1.27em}
   .countdown-box{margin-bottom:30px}
+  .slider-nav2{margin-top:20px}
+  .slider-nav3{margin-top:20px}
 }
 
 @media (max-width: 1200px) {
